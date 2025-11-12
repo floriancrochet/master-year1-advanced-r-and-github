@@ -4,10 +4,10 @@
 \alias{plot.commune}
 \title{Visualiser la répartition des élus par catégorie socio-professionnelle dans une commune}
 \usage{
-\method{plot}{commune}(df, ...)
+\method{plot}{commune}(x, ...)
 }
 \arguments{
-\item{df}{Un DataFrame contenant des informations sur les élus, incluant les colonnes \verb{Code de la catégorie socio-professionnelle},
+\item{x}{Un data.frame contenant des informations sur les élus, incluant les colonnes \verb{Code de la catégorie socio-professionnelle},
 \verb{Libellé de la catégorie socio-professionnelle}, \verb{Libellé de la commune} et \verb{Libellé du département}.}
 
 \item{...}{Arguments supplémentaires, non utilisés dans cette méthode.}
@@ -29,13 +29,13 @@ La fonction utilise \code{ggplot2} pour afficher les résultats.
 # Données (villes)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 
-# DataFrames appartenant à la classe commune
+# data.frames appartenant à la classe commune
 
 df_Nantes <- structure(df_Nantes, class = c("commune", class(df_Nantes)))
 
@@ -44,8 +44,8 @@ df_Aignan <- structure(df_Aignan, class = c("commune", class(df_Aignan)))
 
 # Utilisation de la fonction
 
-plot.commune(df_Nantes)
+plot(df_Nantes)
 
-plot.commune(df_Aignan)
+plot(df_Aignan)
 
 }

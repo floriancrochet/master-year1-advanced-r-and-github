@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 ### Chargement de la librairie
 
-```{r setup}
+```{r setup, eval = FALSE}
 library(firstlibflorian)
 ```
 
@@ -40,7 +40,7 @@ Cette fonction affiche un résumé des informations d'une commune,notamment le n
 
 
 ##### Paramètres
-**df** Un DataFrame contenant des informations sur les élus d'une commune,incluant les colonnes `Libellé de la commune` et `Date de naissance`.  
+**df** Un data.frame contenant des informations sur les élus d'une commune,incluant les colonnes `Libellé de la commune` et `Date de naissance`.  
 **...** Arguments supplémentaires, non utilisés dans cette méthode.
 
 
@@ -54,7 +54,7 @@ Aucun retour explicite. La fonction affiche dans la console :
 
 ##### Exemples d'utilisation
 
-```{r}
+```{r, eval = FALSE}
 # Données (villes)
 
 df_Nantes <- df_gers_loire_atlantique |>
@@ -64,7 +64,7 @@ df_Aignan <- df_gers_loire_atlantique |>
   dplyr::filter(`Libellé de la commune` == "Aignan")
 
 
-# DataFrames appartenant à la classe commune
+# data.frames appartenant à la classe commune
 
 df_Nantes <- structure(df_Nantes, class = c("commune", class(df_Nantes)))
 
@@ -89,7 +89,7 @@ Cette fonction affiche un résumé des informations d'un département,notamment 
 
 ##### Paramètres
 
-**df** Un DataFrame contenant des informations sur les élus, incluant les colonnes `Libellé du département`, `Code de la commune`, et les informations nécessaires pour calculer la distribution des âges, trouver l’élu(e) le/la plus âgé(e) et le/la plus jeune, ainsi que la moyenne d’âge par commune.  
+**df** Un data.frame contenant des informations sur les élus, incluant les colonnes `Libellé du département`, `Code de la commune`, et les informations nécessaires pour calculer la distribution des âges, trouver l’élu(e) le/la plus âgé(e) et le/la plus jeune, ainsi que la moyenne d’âge par commune.  
 **...** Arguments supplémentaires, non utilisés dans cette méthode.
 
 
@@ -106,7 +106,7 @@ Aucun retour explicite. La fonction affiche dans la console :
 
 ##### Exemples d'utilisation
 
-```{r}
+```{r, eval = FALSE}
 # Données (départements)
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
@@ -116,7 +116,7 @@ df_Gers <- df_gers_loire_atlantique |>
   dplyr::filter(`Libellé du département` == "Gers")
 
 
-# DataFrames appartenant à la classe departement
+# data.frames appartenant à la classe departement
 
 df_Loire_Atlantique <- structure(df_Loire_Atlantique, class = c("departement", class(df_Loire_Atlantique)))
 
@@ -154,10 +154,10 @@ Aucun retour explicite. Le fichier `rapport.html` est généré et déplacé ver
 
 ##### Exemples d'utilisation
 
-```{r}
+```{r, eval = FALSE}
 # Utilisation de la fonction pour générer un rapport pour la commune de Nantes (44109) et le département de Loire-Atlantique (44)
 
-# generer_rapport(44109, 44, "<votre chemin>/<nom du fichier>.html")
+generer_rapport(44109, 44, "<votre chemin>/<nom du fichier>.html")
 ```
 
 

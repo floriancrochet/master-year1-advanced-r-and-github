@@ -2,12 +2,12 @@
 % Please edit documentation in R/valider_schema.R
 \name{valider_schema}
 \alias{valider_schema}
-\title{Valider le schéma des données d'un DataFrame}
+\title{Valider le schéma des données d'un data.frame}
 \usage{
 valider_schema(df)
 }
 \arguments{
-\item{df}{Un DataFrame, contenant des informations sur les élus, qui doit avoir au minimum les colonnes suivantes :
+\item{df}{Un data.frame, contenant des informations sur les élus, qui doit avoir au minimum les colonnes suivantes :
 \verb{Code du département}, \verb{Libellé du département}, \verb{Code de la commune}, \verb{Libellé de la commune},
 \verb{Nom de l'élu}, \verb{Prénom de l'élu}, \verb{Date de naissance}, \verb{Code de la catégorie socio-professionnelle},
 \verb{Libellé de la fonction}.}
@@ -16,7 +16,7 @@ valider_schema(df)
 Aucun retour explicite. Un message ou un avertissement est affiché si le schéma n’est pas respecté.
 }
 \description{
-Cette fonction vérifie que les colonnes du DataFrame sont conformes à un schéma prédéfini. Le schéma attendu inclut des colonnes spécifiques
+Cette fonction vérifie que les colonnes du data.frame sont conformes à un schéma prédéfini. Le schéma attendu inclut des colonnes spécifiques
 liées aux informations sur les élus.
 }
 \examples{
@@ -26,16 +26,16 @@ liées aux informations sur les élus.
 # Données (villes ou départements)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
 # Utilisation de la fonction

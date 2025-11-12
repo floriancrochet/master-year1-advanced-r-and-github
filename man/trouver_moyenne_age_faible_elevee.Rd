@@ -4,10 +4,10 @@
 \alias{trouver_moyenne_age_faible_elevee}
 \title{Trouver les communes avec la moyenne d'âge la plus faible et la plus élevée}
 \usage{
-trouver_moyenne_age_faible_elevee(df)
+trouver_moyenne_age_faible_elevee(df, ref_date = Sys.Date())
 }
 \arguments{
-\item{df}{Un DataFrame contenant les informations sur les élus,
+\item{df}{Un data.frame contenant les informations sur les élus,
 incluant les colonnes \verb{Libellé de la commune} et les informations nécessaires
 pour calculer la moyenne d’âge des élus par commune.}
 }
@@ -32,16 +32,16 @@ les moyennes d’âge les plus basses et les plus élevées.
 # Données (villes ou départements)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
 # Utilisation de la fonction

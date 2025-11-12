@@ -4,10 +4,10 @@
 \alias{plot.departement}
 \title{Visualiser la répartition des élus par catégorie socio-professionnelle dans un département}
 \usage{
-\method{plot}{departement}(df, ...)
+\method{plot}{departement}(x, ...)
 }
 \arguments{
-\item{df}{Un DataFrame contenant des informations sur les élus, incluant les colonnes \verb{Code de la catégorie socio-professionnelle},
+\item{x}{Un data.frame contenant des informations sur les élus, incluant les colonnes \verb{Code de la catégorie socio-professionnelle},
 \verb{Libellé de la catégorie socio-professionnelle}, \verb{Libellé du département}, et \verb{Code de la commune}.}
 
 \item{...}{Arguments supplémentaires, non utilisés dans cette méthode.}
@@ -29,23 +29,29 @@ Elle affiche les 10 catégories les plus représentées dans le département.
 # Données (départements)
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
-# DataFrames appartenant à la classe departement
+# data.frames appartenant à la classe departement
 
-df_Loire_Atlantique <- structure(df_Loire_Atlantique, class = c("departement", class(df_Loire_Atlantique)))
+df_Loire_Atlantique <- structure(
+  df_Loire_Atlantique, 
+  class = c("departement", class(df_Loire_Atlantique))
+)
 
-df_Gers <- structure(df_Gers, class = c("df_Gers", class(df_Gers)))
+df_Gers <- structure(
+  df_Gers, 
+  class = c("departement", class(df_Gers))
+)
 
 
 # Utilisation de la fonction
 
-plot.departement(df_Loire_Atlantique)
+plot(df_Loire_Atlantique)
 
-plot.departement(df_Gers)
+plot(df_Gers)
 
 }

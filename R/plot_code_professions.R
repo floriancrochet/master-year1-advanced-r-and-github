@@ -4,12 +4,12 @@
 #' Cette fonction génère un graphique en barres représentant la répartition
 #' des élus selon leur catégorie socio-professionnelle.
 #'
-#' @param df Un DataFrame contenant une colonne `Code de la catégorie socio-professionnelle`.
+#' @param df Un data.frame contenant une colonne `Code de la catégorie socio-professionnelle`.
 #'
 #' @return Un objet ggplot affichant un diagramme en barres de la distribution des élus
 #' par catégorie socio-professionnelle.
 #'
-#' @importFrom dplyr filter count
+#' @importFrom dplyr count
 #' @importFrom ggplot2 ggplot aes geom_bar labs theme_bw
 #'
 #' @keywords internal
@@ -21,16 +21,16 @@
 #' # Données (villes ou départements)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Loire-Atlantique")
+#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 #'
 #' df_Gers <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Gers")
+#'   dplyr::filter(`Libellé du département` == "Gers")
 #'
 #'
 #' # Utilisation de la fonction

@@ -21,8 +21,8 @@ format:
 params:
   code_commune: 44109  # Valeur par défaut
   code_departement: 44  # Valeur par défaut
-  dataframe_name: df_gers_loire_atlantique # Valeur par défaut
-  dataframe_path: NULL
+  data.frame_name: df_gers_loire_atlantique # Valeur par défaut
+  data.frame_path: NULL
 ---
 
 \newpage
@@ -47,12 +47,12 @@ library(firstlibflorian)
 # Chargement des données
 
 ```{r}
-if (params$dataframe_name == "df_gers_loire_atlantique") {
+if (params$data.frame_name == "df_gers_loire_atlantique") {
   # Jeu de données du package
   data <- df_gers_loire_atlantique
 } else {
   # Jeu de données en paramètre
-  data <- readRDS(normalizePath(params$dataframe_path, winslash = "/", mustWork = TRUE))
+  data <- readRDS(normalizePath(params$data.frame_path, winslash = "/", mustWork = TRUE))
 }
 ```
 

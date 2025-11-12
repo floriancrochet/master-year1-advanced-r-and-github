@@ -1,17 +1,15 @@
-#' Valider le schéma des données d'un DataFrame
+#' Valider le schéma des données d'un data.frame
 #'
 #' @description
-#' Cette fonction vérifie que les colonnes du DataFrame sont conformes à un schéma prédéfini. Le schéma attendu inclut des colonnes spécifiques
+#' Cette fonction vérifie que les colonnes du data.frame sont conformes à un schéma prédéfini. Le schéma attendu inclut des colonnes spécifiques
 #' liées aux informations sur les élus.
 #'
-#' @param df Un DataFrame, contenant des informations sur les élus, qui doit avoir au minimum les colonnes suivantes :
+#' @param df Un data.frame, contenant des informations sur les élus, qui doit avoir au minimum les colonnes suivantes :
 #' `Code du département`, `Libellé du département`, `Code de la commune`, `Libellé de la commune`,
 #' `Nom de l'élu`, `Prénom de l'élu`, `Date de naissance`, `Code de la catégorie socio-professionnelle`,
 #' `Libellé de la fonction`.
 #' 
 #' @return Aucun retour explicite. Un message ou un avertissement est affiché si le schéma n’est pas respecté.
-#'
-#' @importFrom dplyr filter
 #'
 #' @keywords internal
 #'
@@ -22,16 +20,16 @@
 #' # Données (villes ou départements)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Loire-Atlantique")
+#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 #'
 #' df_Gers <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Gers")
+#'   dplyr::filter(`Libellé du département` == "Gers")
 #'
 #'
 #' # Utilisation de la fonction
@@ -47,13 +45,13 @@
 #' valider_schema(df_gers_loire_atlantique)
 
 
-valider_schema <- function(df) {
-  # Vérifier si l'objet est bien un data.frame
+valider_schema <- function(df) { 
+  # Type d'objet
   if (!is.data.frame(df)) {
-    stop("L'objet fourni n'est pas un data.frame.")
+    stop("L'objet fourni n'est pas un data.frame.", call. = FALSE)
   }
   
-  # Schéma minimal requis
+  # Colonnes minimales requises
   schema <- c(
     "Code du département",
     "Libellé du département",
@@ -69,26 +67,12 @@ valider_schema <- function(df) {
   # Colonnes manquantes
   missing_cols <- setdiff(schema, colnames(df))
   
-  # Colonnes supplémentaires
-  extra_cols <- setdiff(colnames(df), schema)
-  
   if (length(missing_cols) > 0) {
-    warning(
-      paste0(
-        "Colonnes manquantes : ", paste(missing_cols, collapse = ", "), "\n",
-        "Cela peut entraîner des erreurs dans certaines fonctions du package."
-      )
+    stop(
+      sprintf("Colonnes manquantes : %s", paste(missing_cols, collapse = ", ")),
+      call. = FALSE
     )
   }
-  
-  # if (length(extra_cols) > 0) {
-  #   message(
-  #     paste0(
-  #       "Colonnes supplémentaires détectées : ", paste(extra_cols, collapse = ", "), "\n",
-  #       "Elles seront ignorées par les fonctions qui utilisent le schéma standard."
-  #     )
-  #   )
-  # }
   
   invisible(df)
 }

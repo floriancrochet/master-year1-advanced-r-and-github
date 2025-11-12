@@ -10,7 +10,7 @@ test_that("summary.departement renvoie une erreur pour un schéma incorrect", {
   expect_error(summary.departement(df_Loire_Atlantique_invalide))
 })
 
-test_that("summary.departement fonctionne avec un dataframe de classe 'departement' et un schéma valide", {
+test_that("summary.departement fonctionne avec un data.frame de classe 'departement' et un schéma valide", {
   df_Loire_Atlantique_valide <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
@@ -22,7 +22,7 @@ test_that("summary.departement fonctionne avec un dataframe de classe 'departeme
 
 
 
-test_that("summary.departement renvoie une erreur si le dataframe n'est pas de classe 'departement'", {
+test_that("summary.departement renvoie une erreur si le data.frame n'est pas de classe 'departement'", {
   df_Loire_Atlantique_pas_departement <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé du département` == "Loire-Atlantique")  # Pas explicitement une classe 'departement'
 

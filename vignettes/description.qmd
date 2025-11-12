@@ -6,13 +6,11 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-# Description du package
-
 ## Informations générales
 
 - **Nom du package** : `firstlibflorian`  
 - **Titre** : Analyse et visualisation des données géographiques et démographiques des communes et départements  
-- **Version** : 0.0.0.9000  
+- **Version** : 0.1.0
 - **Auteur** : Florian Crochet  
 - **Licence** : GPL-3  
 - **URL** : [https://floriancrochet.github.io/masters-year1-advanced-r-and-github/](https://floriancrochet.github.io/masters-year1-advanced-r-and-github/)  
@@ -60,6 +58,7 @@ Les principales fonctions du package sont les suivantes :
 
 Pour installer le package depuis GitHub :  
 
-```{r}
-# install.packages("devtools")
+```{r, eval = FALSE}
+install.packages("devtools")
 devtools::install_github("floriancrochet/masters-year1-advanced-r-and-github")
+```

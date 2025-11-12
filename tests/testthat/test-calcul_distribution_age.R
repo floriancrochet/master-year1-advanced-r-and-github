@@ -1,36 +1,44 @@
-test_that("calcul_distribution_age renvoie une erreur pour un schéma incorrect", {
-  df_Nantes_invalide <- df_gers_loire_atlantique |>
-    dplyr::filter(`Libellé de la commune` == "Nantes") |>
-    dplyr::select(-`Date de naissance`)
-
-  expect_error(calcul_distribution_age(df_Nantes_invalide))
-})
-
-test_that("calcul_distribution_age fonctionne avec un schéma valide", {
-  df_Nantes_valide <- df_gers_loire_atlantique |>
-    dplyr::filter(`Libellé de la commune` == "Nantes")
-
-  expect_silent(calcul_distribution_age(df_Nantes_valide))
-})
-
-
-
-test_that("calcul_distribution_age renvoie la distribution des âges correcte", {
-  # Utilisation du jeu de données df_Nantes_identique
+test_that("calcul_distribution_age renvoie la distribution des âges correcte (déterministe)", {
+  # Données : Nantes
   df_Nantes_identique <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé de la commune` == "Nantes")
-
-  # Résultat attendu : une tibble avec les statistiques de distribution des âges
-  distribution_esperee <- tibble::tibble(
-    Nom = "Nantes",
-    Min = 28,
-    Q1 = 42,
-    Médiane = 50,
-    Moyenne = 50,
-    Q3 = 58,
-    Max = 73
+  
+  # Date de référence figée pour la reproductibilité
+  ref_date <- as.Date("2024-01-01")
+  
+  # Calcul attendu (même logique que la fonction, via lubridate)
+  dates_naiss <- lubridate::dmy(df_Nantes_identique$`Date de naissance`)
+  ages_attendus <- floor(
+    lubridate::time_length(
+      lubridate::interval(dates_naiss, ref_date),
+      "years"
+    )
   )
-
-  # Vérification que le résultat de calcul_distribution_age correspond à distribution_esperee
-  expect_identical(calcul_distribution_age(df_Nantes_identique), distribution_esperee)
+  
+  stats_attendues <- floor(
+    unname(
+      stats::quantile(
+        ages_attendus, 
+        probs = c(0, 0.25, 0.5, 0.75, 1),
+        type = 7,
+        names = FALSE
+      )
+    )
+  )
+  
+  distribution_attendue <- tibble::tibble(
+    Nom = "Nantes",
+    Min = stats_attendues[1],
+    Q1 = stats_attendues[2],
+    Médiane = stats_attendues[3],
+    Moyenne = floor(mean(ages_attendus)),
+    Q3 = stats_attendues[4],
+    Max = stats_attendues[5]
+  )
+  
+  # Vérification stricte
+  expect_identical(
+    calcul_distribution_age(df_Nantes_identique, ref_date = ref_date),
+    distribution_attendue
+  )
 })

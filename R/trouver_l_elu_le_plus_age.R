@@ -1,20 +1,20 @@
 #' Trouver l'élu le plus âgé
 #'
 #' @description
-#' Cette fonction identifie l'élu le plus âgé dans un DataFrame,
+#' Cette fonction identifie l'élu le plus âgé dans un data.frame,
 #' en calculant l'âge à partir de la date de naissance.
 #'
-#' @param df Un DataFrame contenant une colonne `Date de naissance` au format `"jour/mois/année"`,
+#' @param df Un data.frame contenant une colonne `Date de naissance` au format `"jour/mois/année"`,
 #' ainsi que les colonnes `Nom de l'élu` et `Prénom de l'élu`.
 #'
-#' @return Un DataFrame avec les colonnes :
+#' @return Un data.frame avec les colonnes :
 #' - `Nom de l'élu` : Nom de l'élu le plus âgé.
 #' - `Prénom de l'élu` : Prénom de l'élu le plus âgé.
 #' - `Date de naissance` : Date de naissance de l'élu le plus âgé.
 #' - `âge` : Âge en années de l'élu le plus âgé.
 #'
-#' @importFrom dplyr filter mutate slice select
-#' @importFrom lubridate dmy
+#' @importFrom dplyr mutate slice select
+#' @importFrom lubridate dmy interval time_length
 #'
 #' @keywords internal
 #'
@@ -25,40 +25,43 @@
 #' # Données (villes ou départements)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Loire-Atlantique")
+#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 #'
 #' df_Gers <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Gers")
+#'   dplyr::filter(`Libellé du département` == "Gers")
 #'
 #'
 #' # Utilisation de la fonction
 #'
-#' trouver_l'élu_le_plus_âgé(df_Nantes)
+#' trouver_l_elu_le_plus_age(df_Nantes)
 #'
-#' trouver_l'élu_le_plus_âgé(df_Aignan)
+#' trouver_l_elu_le_plus_age(df_Aignan)
 #'
-#' trouver_l'élu_le_plus_âgé(df_Loire_Atlantique)
+#' trouver_l_elu_le_plus_age(df_Loire_Atlantique)
 #'
-#' trouver_l'élu_le_plus_âgé(df_Gers)
+#' trouver_l_elu_le_plus_age(df_Gers)
 
 
-trouver_l_elu_le_plus_age <- function(df) {
+trouver_l_elu_le_plus_age <- function(df, ref_date = Sys.Date()) {
   valider_schema(df)
 
   df |>
     mutate(`Date de naissance` = dmy(`Date de naissance`)) |>
     mutate(
       âge = floor(
-        as.numeric(difftime(Sys.Date(), `Date de naissance`, units = "days")) / 365.25
+        lubridate::time_length(
+          lubridate::interval(`Date de naissance`, as.Date(ref_date)),
+          "years"
+        )
       )
     ) |>
-    slice(which.min(`âge`)) |>
+    slice(which.max(`âge`)) |>
     select(
       `Nom de l'élu`,
       `Prénom de l'élu`,

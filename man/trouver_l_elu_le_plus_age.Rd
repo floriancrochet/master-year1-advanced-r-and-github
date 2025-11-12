@@ -4,14 +4,14 @@
 \alias{trouver_l_elu_le_plus_age}
 \title{Trouver l'élu le plus âgé}
 \usage{
-trouver_l_elu_le_plus_age(df)
+trouver_l_elu_le_plus_age(df, ref_date = Sys.Date())
 }
 \arguments{
-\item{df}{Un DataFrame contenant une colonne \verb{Date de naissance} au format \code{"jour/mois/année"},
+\item{df}{Un data.frame contenant une colonne \verb{Date de naissance} au format \code{"jour/mois/année"},
 ainsi que les colonnes \verb{Nom de l'élu} et \verb{Prénom de l'élu}.}
 }
 \value{
-Un DataFrame avec les colonnes :
+Un data.frame avec les colonnes :
 \itemize{
 \item \verb{Nom de l'élu} : Nom de l'élu le plus âgé.
 \item \verb{Prénom de l'élu} : Prénom de l'élu le plus âgé.
@@ -20,7 +20,7 @@ Un DataFrame avec les colonnes :
 }
 }
 \description{
-Cette fonction identifie l'élu le plus âgé dans un DataFrame,
+Cette fonction identifie l'élu le plus âgé dans un data.frame,
 en calculant l'âge à partir de la date de naissance.
 }
 \examples{
@@ -30,26 +30,26 @@ en calculant l'âge à partir de la date de naissance.
 # Données (villes ou départements)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
 # Utilisation de la fonction
 
-trouver_l'élu_le_plus_âgé(df_Nantes)
+trouver_l_elu_le_plus_age(df_Nantes)
 
-trouver_l'élu_le_plus_âgé(df_Aignan)
+trouver_l_elu_le_plus_age(df_Aignan)
 
-trouver_l'élu_le_plus_âgé(df_Loire_Atlantique)
+trouver_l_elu_le_plus_age(df_Loire_Atlantique)
 
-trouver_l'élu_le_plus_âgé(df_Gers)
+trouver_l_elu_le_plus_age(df_Gers)
 }
 \keyword{internal}

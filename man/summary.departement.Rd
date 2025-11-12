@@ -4,10 +4,10 @@
 \alias{summary.departement}
 \title{Résumer les informations d'un département}
 \usage{
-\method{summary}{departement}(df, ...)
+\method{summary}{departement}(object, ...)
 }
 \arguments{
-\item{df}{Un DataFrame contenant des informations sur les élus,
+\item{object}{Un data.frame contenant des informations sur les élus,
 incluant les colonnes \verb{Libellé du département}, \verb{Code de la commune}, et les informations nécessaires
 pour calculer la distribution des âges, trouver l’élu(e) le/la plus âgé(e) et le/la plus jeune,
 ainsi que la moyenne d’âge par commune.}
@@ -41,23 +41,29 @@ la plus faible et la plus élevée, avec la distribution des âges des élus pou
 # Données (départements)
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
-# DataFrames appartenant à la classe departement
+# data.frames appartenant à la classe departement
 
-df_Loire_Atlantique <- structure(df_Loire_Atlantique, class = c("departement", class(df_Loire_Atlantique)))
+df_Loire_Atlantique <- structure(
+  df_Loire_Atlantique, 
+  class = c("departement", class(df_Loire_Atlantique))
+)
 
-df_Gers <- structure(df_Gers, class = c("df_Gers", class(df_Gers)))
+df_Gers <- structure(
+  df_Gers, 
+  class = c("df_Gers", class(df_Gers))
+)
 
 
 # Utilisation de la fonction
 
-summary.departement(df_Loire_Atlantique)
+summary(df_Loire_Atlantique)
 
-summary.departement(df_Gers)
+summary(df_Gers)
 
 }

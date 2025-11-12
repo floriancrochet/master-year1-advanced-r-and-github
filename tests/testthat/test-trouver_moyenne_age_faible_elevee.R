@@ -16,21 +16,27 @@ test_that("trouver_moyenne_age_faible_elevee fonctionne avec un schéma valide",
 
 
 test_that("trouver_moyenne_age_faible_elevee renvoie les bonnes statistiques de la moyenne d'âge", {
-  # Utilisation du jeu de données df_Nantes_identique
-  df_Nantes_identique <- df_gers_loire_atlantique |>
-    dplyr::filter(`Libellé de la commune` == "Nantes")
-
-  # Résultat attendu : une tibble avec les statistiques calculées sur l'âge
-  distribution_esperes <- tibble::tibble(
-    Nom = rep("Nantes", 2),
-    Min = c(28, 28),
-    Q1 = c(42, 42),
-    Médiane = c(50, 50),
-    Moyenne = c(50, 50),
-    Q3 = c(58, 58),
-    Max = c(73, 73)
+  # On sélectionne deux communes pour tester le cas où il y a plusieurs groupes
+  df_test <- df_gers_loire_atlantique |>
+    dplyr::filter(`Libellé de la commune` %in% c("Nantes", "Saint-Herblain"))
+  
+  # On fixe une date pour des résultats reproductibles
+  ref_date <- as.Date("2024-01-01")
+  
+  # On calcule la distribution d'âge pour chacune des deux communes
+  res_all <- dplyr::bind_rows(
+    calcul_distribution_age(dplyr::filter(df_test, `Libellé de la commune` == "Nantes"), ref_date = ref_date),
+    calcul_distribution_age(dplyr::filter(df_test, `Libellé de la commune` == "Saint-Herblain"), ref_date = ref_date)
   )
-
-  # Vérification que le résultat de trouver_moyenne_age_faible_elevee correspond à distribution_esperes
-  expect_identical(trouver_moyenne_age_faible_elevee(df_Nantes_identique), distribution_esperes)
+  
+  # On construit l'attendu : la commune avec la moyenne la plus faible et la plus élevée
+  distribution_esperes <- res_all |>
+    dplyr::arrange(Moyenne) |>
+    dplyr::slice(c(1, dplyr::n()))
+  
+  # Vérifie que la fonction renvoie bien ces deux communes dans le bon ordre
+  expect_identical(
+    trouver_moyenne_age_faible_elevee(df_test, ref_date = ref_date),
+    distribution_esperes
+  )
 })

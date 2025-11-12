@@ -8,7 +8,7 @@ test_that("summary.commune renvoie une erreur pour un schéma incorrect", {
   expect_error(summary.commune(df_Nantes_invalide))
 })
 
-test_that("summary.commune fonctionne avec un dataframe de classe 'commune' et un schéma valide", {
+test_that("summary.commune fonctionne avec un data.frame de classe 'commune' et un schéma valide", {
   df_Nantes_valide <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé de la commune` == "Nantes")
 
@@ -19,7 +19,7 @@ test_that("summary.commune fonctionne avec un dataframe de classe 'commune' et u
 })
 
 
-test_that("summary.commune renvoie une erreur si le dataframe n'est pas de classe 'commune'", {
+test_that("summary.commune renvoie une erreur si le data.frame n'est pas de classe 'commune'", {
   df_Nantes_pas_commune <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé de la commune` == "Nantes")  # Pas explicitement une classe 'commune'
 

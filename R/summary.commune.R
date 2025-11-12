@@ -5,7 +5,7 @@
 #' notamment le nom de la commune, le nombre d'élus, la distribution des âges
 #' des élus, ainsi que le nom et l'âge de l'élu(e) le/la plus âgé(e).
 #'
-#' @param df Un DataFrame contenant des informations sur les élus d'une commune,
+#' @param object Un data.frame contenant des informations sur les élus d'une commune,
 #' incluant les colonnes `Libellé de la commune` et `Date de naissance`.
 #' @param ... Arguments supplémentaires, non utilisés dans cette méthode.
 #'
@@ -15,8 +15,6 @@
 #' - La distribution des âges des élus sous forme de tibble,
 #' - Le nom, le prénom, la date de naissance et l'âge de l’élu(e) le/la plus âgé(e), sous forme de tibble.
 #'
-#' @importFrom dplyr filter
-#'
 #' @examples
 #' # Exemples d'utilisation
 #'
@@ -24,13 +22,13 @@
 #' # Données (villes)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #'
-#' # DataFrames appartenant à la classe commune
+#' # data.frames appartenant à la classe commune
 #'
 #' df_Nantes <- structure(df_Nantes, class = c("commune", class(df_Nantes)))
 #'
@@ -39,14 +37,17 @@
 #'
 #' # Utilisation de la fonction
 #'
-#' summary.commune(df_Nantes)
+#' summary(df_Nantes)
 #'
-#' summary.commune(df_Aignan)
+#' summary(df_Aignan)
 #'
 #' @export
 
 
-summary.commune <- function(df, ...) {
+summary.commune <- function(object, ...) {
+  
+  df <- object
+  
   valider_schema(df)
 
   stopifnot("commune" %in% class(df))

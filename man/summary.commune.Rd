@@ -4,10 +4,10 @@
 \alias{summary.commune}
 \title{Résumer les informations d'une commune}
 \usage{
-\method{summary}{commune}(df, ...)
+\method{summary}{commune}(object, ...)
 }
 \arguments{
-\item{df}{Un DataFrame contenant des informations sur les élus d'une commune,
+\item{object}{Un data.frame contenant des informations sur les élus d'une commune,
 incluant les colonnes \verb{Libellé de la commune} et \verb{Date de naissance}.}
 
 \item{...}{Arguments supplémentaires, non utilisés dans cette méthode.}
@@ -33,13 +33,13 @@ des élus, ainsi que le nom et l'âge de l'élu(e) le/la plus âgé(e).
 # Données (villes)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 
-# DataFrames appartenant à la classe commune
+# data.frames appartenant à la classe commune
 
 df_Nantes <- structure(df_Nantes, class = c("commune", class(df_Nantes)))
 
@@ -48,8 +48,8 @@ df_Aignan <- structure(df_Aignan, class = c("commune", class(df_Aignan)))
 
 # Utilisation de la fonction
 
-summary.commune(df_Nantes)
+summary(df_Nantes)
 
-summary.commune(df_Aignan)
+summary(df_Aignan)
 
 }

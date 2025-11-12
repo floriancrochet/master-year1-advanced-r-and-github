@@ -1,22 +1,43 @@
-test_that("generer_rapport() s'exécute sans erreur, avertissement ou message", {
+test_that("generer_rapport() s'exécute et crée le fichier attendu", {
+  # Chemin absolu temporaire pour la sortie (et nettoyage auto du dossier)
+  out_dir  <- withr::local_tempdir()
+  out_file <- file.path(normalizePath(out_dir, winslash = "/", mustWork = TRUE),
+                        "rapport_final.html")
   
-  # Définir les paramètres de test
-  code_commune <- 44150
-  code_departement <- 44
+  # Exécution en capturant toute sortie console + sans messages/avertissements
+  expect_no_error(
+    suppressWarnings(
+      suppressMessages(
+        invisible(capture.output(
+          generer_rapport(
+            commune     = "44150",
+            departement = "44",
+            output      = out_file,
+            df          = df_gers_loire_atlantique
+          )
+        ))
+      )
+    )
+  )
   
-  # Exécuter la commande system pour générer le rapport
-  system("quarto render inst/rapport.qmd -P code_commune:commune -P code_departement:departement")
+  expect_true(file.exists(out_file))
+})
+
+
+
+test_that("generer_rapport() renvoie une erreur claire si Quarto est indisponible", {
+  qp <- tryCatch(quarto::quarto_path(), error = function(e) "")
   
-  # Utiliser la fonction generer_rapport pour vérifier son comportement
-  resultat <- tryCatch({
-    generer_rapport(commune = code_commune, departement = code_departement, output = "rapport_final.html")
-    NULL  # Pas d'erreur
-  }, error = function(e) e)
-  
-  # Vérifier qu'il n'y a pas d'erreur dans l'exécution
-  expect_null(resultat)
-  
-  # Vérifier qu'il n'y a pas d'avertissement ni de message
-  expect_warning(generer_rapport(commune = code_commune, departement = code_departement, output = "rapport_final.html"), NA)
-  expect_message(generer_rapport(commune = code_commune, departement = code_departement, output = "rapport_final.html"), NA)
+  if (identical(qp, "")) {
+    out_dir  <- withr::local_tempdir()
+    out_file <- file.path(normalizePath(out_dir, winslash = "/", mustWork = TRUE),
+                          "rapport_erreur.html")
+    
+    expect_error(
+      generer_rapport("44150", "44", out_file, df_gers_loire_atlantique),
+      "Le logiciel Quarto n'a pas été détecté"
+    )
+  } else {
+    succeed("Quarto est disponible : le scénario d'erreur ne s'applique pas.")
+  }
 })

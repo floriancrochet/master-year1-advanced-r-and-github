@@ -21,14 +21,14 @@ test_that("plot.departement fonctionne avec un schéma valide", {
 
 
 
-test_that("plot.departement renvoie une erreur si le dataframe n'est pas de classe 'departement'", {
+test_that("plot.departement renvoie une erreur si le data.frame n'est pas de classe 'departement'", {
   df_Loire_Atlantique_pas_departement <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé du département` == "Loire-Atlantique")  # Pas explicitement une classe 'departement'
 
   expect_error(plot.departement(df_Loire_Atlantique_pas_departement))
 })
 
-test_that("plot.departement fonctionne avec un dataframe de classe 'departement'", {
+test_that("plot.departement fonctionne avec un data.frame de classe 'departement'", {
   df_Loire_Atlantique_departement <- df_gers_loire_atlantique |>
     dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
@@ -50,9 +50,21 @@ test_that("plot.departement fonctionne sans erreur et génère un graphique ggpl
   expect_warning(plot.departement(df_Loire_Atlantique), NA)  # Aucun avertissement ne doit être généré
   expect_message(plot.departement(df_Loire_Atlantique), NA)  # Aucun autre message ne doit être généré
 
-  # Vérifier que le résultat est un objet ggplot
+  # Vérifier que plot.departement() retourne une liste structurée correctement
   resultat <- plot.departement(df_Loire_Atlantique)
-  expect_s3_class(resultat, "gg")  # Vérifier que c'est un objet ggplot
+  
+  # Vérifier que la fonction retourne bien une liste
+  expect_type(resultat, "list")
+  
+  # Vérifier que la liste contient exactement les trois éléments attendus
+  expect_named(resultat, c("graphique", "graphique_sans_legende", "legende"))
+  
+  # Vérifier que les deux premiers éléments sont des objets ggplot
+  expect_s3_class(resultat$graphique, "ggplot")
+  expect_s3_class(resultat$graphique_sans_legende, "ggplot")
+  
+  # Vérifier que le troisième élément (la légende) est un objet gg
+  expect_s3_class(resultat$legende, "gg")
 
   # Vérifier qu'un graphique est effectivement généré sans message
   expect_silent(plot.departement(df_Loire_Atlantique))  # Vérifier qu'aucun message n'est affiché lors du rendu du graphique

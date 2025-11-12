@@ -6,7 +6,7 @@
 #' de la distribution des âges des élus à chaque groupe, puis sélectionne les communes avec
 #' les moyennes d’âge les plus basses et les plus élevées.
 #'
-#' @param df Un DataFrame contenant les informations sur les élus,
+#' @param df Un data.frame contenant les informations sur les élus,
 #' incluant les colonnes `Libellé de la commune` et les informations nécessaires
 #' pour calculer la moyenne d’âge des élus par commune.
 #'
@@ -15,7 +15,7 @@
 #' - `Libellé de la commune` : Le nom de la commune,
 #' - `Moyenne` : La moyenne d’âge des élus dans la commune.
 #'
-#' @importFrom dplyr filter group_by group_split arrange slice bind_rows
+#' @importFrom dplyr group_by group_split arrange slice bind_rows
 #' @importFrom purrr map
 #'
 #' @keywords internal
@@ -27,16 +27,16 @@
 #' # Données (villes ou départements)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Loire-Atlantique")
+#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 #'
 #' df_Gers <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Gers")
+#'   dplyr::filter(`Libellé du département` == "Gers")
 #'
 #'
 #' # Utilisation de la fonction
@@ -50,13 +50,13 @@
 #' trouver_moyenne_age_faible_elevee(df_Gers)
 
 
-trouver_moyenne_age_faible_elevee <- function(df) {
+trouver_moyenne_age_faible_elevee <- function(df, ref_date = Sys.Date()) {
   valider_schema(df)
 
   df |>
     group_by(`Libellé de la commune`) |>
     group_split() |>
-    map(calcul_distribution_age) |>
+    map(~ calcul_distribution_age(.x, ref_date = ref_date)) |>
     bind_rows() |>
     arrange(Moyenne) |>
     slice(c(1, n()))

@@ -4,10 +4,10 @@
 \alias{trouver_elu_le_plus_age_jeune}
 \title{Trouver l'élu(e) le plus âgé(e) et le/la plus jeune}
 \usage{
-trouver_elu_le_plus_age_jeune(df)
+trouver_elu_le_plus_age_jeune(df, ref_date = Sys.Date())
 }
 \arguments{
-\item{df}{Un DataFrame contenant les informations sur les élus,
+\item{df}{Un data.frame contenant les informations sur les élus,
 incluant les colonnes \verb{Nom de l'élu}, \verb{Prénom de l'élu}, \verb{Date de naissance},
 et \verb{Libellé de la commune}.}
 }
@@ -24,7 +24,7 @@ et de l'élu(e) le/la plus jeune. Les colonnes retournées incluent :
 }
 \description{
 Cette fonction permet de trouver l'élu(e) le plus âgé(e) et le/la plus jeune
-dans un DataFrame d'élus. Elle calcule l'âge des élus à partir de leur date de naissance,
+dans un data.frame d'élus. Elle calcule l'âge des élus à partir de leur date de naissance,
 puis retourne les informations concernant l'élu(e) le/la plus âgé(e) et le/la plus jeune.
 La fonction trie les élus par date de naissance et sélectionne le premier et le dernier élu.
 }
@@ -35,16 +35,16 @@ La fonction trie les élus par date de naissance et sélectionne le premier et l
 # Données (villes ou départements)
 
 df_Nantes <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Nantes")
+  dplyr::filter(`Libellé de la commune` == "Nantes")
 
 df_Aignan <- df_gers_loire_atlantique |>
-  filter(`Libellé de la commune` == "Aignan")
+  dplyr::filter(`Libellé de la commune` == "Aignan")
 
 df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Loire-Atlantique")
+  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 
 df_Gers <- df_gers_loire_atlantique |>
-  filter(`Libellé du département` == "Gers")
+  dplyr::filter(`Libellé du département` == "Gers")
 
 
 # Utilisation de la fonction

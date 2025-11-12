@@ -2,11 +2,11 @@
 #'
 #' @description
 #' Cette fonction permet de trouver l'élu(e) le plus âgé(e) et le/la plus jeune
-#' dans un DataFrame d'élus. Elle calcule l'âge des élus à partir de leur date de naissance,
+#' dans un data.frame d'élus. Elle calcule l'âge des élus à partir de leur date de naissance,
 #' puis retourne les informations concernant l'élu(e) le/la plus âgé(e) et le/la plus jeune.
 #' La fonction trie les élus par date de naissance et sélectionne le premier et le dernier élu.
 #'
-#' @param df Un DataFrame contenant les informations sur les élus,
+#' @param df Un data.frame contenant les informations sur les élus,
 #' incluant les colonnes `Nom de l'élu`, `Prénom de l'élu`, `Date de naissance`,
 #' et `Libellé de la commune`.
 #'
@@ -18,8 +18,8 @@
 #' - `âge` : L'âge calculé de l'élu,
 #' - `Libellé de la commune` : La commune à laquelle appartient l'élu.
 #'
-#' @importFrom dplyr filter mutate arrange slice n select
-#' @importFrom lubridate dmy
+#' @importFrom dplyr mutate arrange slice n select
+#' @importFrom lubridate dmy interval time_length
 #'
 #' @keywords internal
 #'
@@ -30,16 +30,16 @@
 #' # Données (villes ou départements)
 #'
 #' df_Nantes <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Nantes")
+#'   dplyr::filter(`Libellé de la commune` == "Nantes")
 #'
 #' df_Aignan <- df_gers_loire_atlantique |>
-#'   filter(`Libellé de la commune` == "Aignan")
+#'   dplyr::filter(`Libellé de la commune` == "Aignan")
 #'
 #' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Loire-Atlantique")
+#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
 #'
 #' df_Gers <- df_gers_loire_atlantique |>
-#'   filter(`Libellé du département` == "Gers")
+#'   dplyr::filter(`Libellé du département` == "Gers")
 #'
 #'
 #' # Utilisation de la fonction
@@ -53,14 +53,17 @@
 #' trouver_elu_le_plus_age_jeune(df_Gers)
 
 
-trouver_elu_le_plus_age_jeune <- function(df) {
+trouver_elu_le_plus_age_jeune <- function(df, ref_date = Sys.Date()) {
   valider_schema(df)
 
   df |>
     mutate(`Date de naissance` = dmy(`Date de naissance`)) |>
     mutate(
       âge = floor(
-        as.numeric(difftime(Sys.Date(), `Date de naissance`, units = "days")) / 365.25
+        lubridate::time_length(
+          lubridate::interval(`Date de naissance`, as.Date(ref_date)),
+          "years"
+        )
       )
     ) |>
     arrange(`Date de naissance`) |>
@@ -69,7 +72,7 @@ trouver_elu_le_plus_age_jeune <- function(df) {
       `Nom de l'élu`,
       `Prénom de l'élu`,
       `Date de naissance`,
-      `âge`,
-      `Libellé de la commune`
+      `Libellé de la commune`,
+      `âge`
     )
 }

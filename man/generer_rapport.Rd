@@ -14,7 +14,7 @@ generer_rapport(commune, departement, output, df)
 \item{output}{Une chaîne de caractères représentant le chemin de destination où le fichier rapport doit être déplacé.
 Le fichier généré sera déplacé vers ce chemin sous le nom de spécifié.}
 
-\item{df}{Un DataFrame contenant des informations sur les élus,}
+\item{df}{Un data.frame contenant des informations sur les élus,}
 }
 \value{
 Aucun retour. Le fichier rapport.html est généré et déplacé vers le chemin spécifié.
