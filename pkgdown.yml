@@ -1,9 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
+  description: description.html
   firstlibFlorian: firstlibFlorian.html
-last_built: 2025-03-02T08:31Z
+  fonctions: fonctions.html
+last_built: 2025-11-12T09:57Z
 urls:
-  reference: https://flo-1-618.github.io/firstlibFlorian/reference
-  article: https://flo-1-618.github.io/firstlibFlorian/articles
+  reference: https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference
+  article: https://floriancrochet.github.io/master-year1-advanced-r-and-github/articles
