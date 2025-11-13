@@ -1,4 +1,4 @@
-# Créer un objet de classe 'commune' à partir d'un data.frame
+# Créer un objet de classe `commune` à partir d'un data.frame
 
 Cette fonction prend un data.frame contenant des informations sur une
 commune et valide que toutes les lignes correspondent à une seule

@@ -1,4 +1,4 @@
-# Créer un objet de classe 'departement' à partir d'un data.frame
+# Créer un objet de classe `departement` à partir d'un data.frame
 
 Cette fonction prend un data.frame contenant des informations sur un
 département et valide que toutes les lignes correspondent à un seul
