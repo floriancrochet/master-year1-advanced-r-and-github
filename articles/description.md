@@ -46,20 +46,21 @@ supplémentaires :
 
 Les principales fonctions du package sont les suivantes :
 
-- [`creer_commune()`](../reference/creer_commune.md) : Créer un objet de
-  classe `commune`.
-- [`creer_departement()`](../reference/creer_departement.md) : Créer un
-  objet de classe `departement`.
-- [`generer_rapport()`](../reference/generer_rapport.md) : Générer un
-  rapport statistique pour un objet `commune` ou `departement`.
-- [`plot.commune()`](../reference/plot.commune.md) : Visualiser les
-  données géographiques d’une commune.
-- [`plot.departement()`](../reference/plot.departement.md) : Visualiser
-  les données géographiques d’un département.
-- [`summary.commune()`](../reference/summary.commune.md) : Résumé
-  statistique d’un objet `commune`.
-- [`summary.departement()`](../reference/summary.departement.md) :
-  Résumé statistique d’un objet `departement`.
+- [`creer_commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_commune.md)
+  : Créer un objet de classe `commune`.
+- [`creer_departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_departement.md)
+  : Créer un objet de classe `departement`.
+- [`generer_rapport()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/generer_rapport.md)
+  : Générer un rapport statistique pour un objet `commune` ou
+  `departement`.
+- [`plot.commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.commune.md)
+  : Visualiser les données géographiques d’une commune.
+- [`plot.departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.departement.md)
+  : Visualiser les données géographiques d’un département.
+- [`summary.commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.commune.md)
+  : Résumé statistique d’un objet `commune`.
+- [`summary.departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.departement.md)
+  : Résumé statistique d’un objet `departement`.
 
 ## Installation
 

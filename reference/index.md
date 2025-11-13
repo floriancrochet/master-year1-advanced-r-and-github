@@ -2,29 +2,32 @@
 
 ## All functions
 
-- [`creer_commune()`](creer_commune.md) :
+- [`creer_commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_commune.md)
+  :
 
   Créer un objet de classe `commune` à partir d'un data.frame
 
-- [`creer_departement()`](creer_departement.md) :
+- [`creer_departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_departement.md)
+  :
 
   Créer un objet de classe `departement` à partir d'un data.frame
 
-- [`df_gers_loire_atlantique`](df_gers_loire_atlantique.md) : Données
-  des élus des départements du Gers et de la Loire-Atlantique
+- [`df_gers_loire_atlantique`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/df_gers_loire_atlantique.md)
+  : Données des élus des départements du Gers et de la Loire-Atlantique
 
-- [`generer_rapport()`](generer_rapport.md) : Générer un rapport Quarto
-  et le déplacer vers un chemin spécifié
+- [`generer_rapport()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/generer_rapport.md)
+  : Générer un rapport Quarto et le déplacer vers un chemin spécifié
 
-- [`plot(`*`<commune>`*`)`](plot.commune.md) : Visualiser la répartition
-  des élus par catégorie socio-professionnelle dans une commune
+- [`plot(`*`<commune>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.commune.md)
+  : Visualiser la répartition des élus par catégorie
+  socio-professionnelle dans une commune
 
-- [`plot(`*`<departement>`*`)`](plot.departement.md) : Visualiser la
-  répartition des élus par catégorie socio-professionnelle dans un
-  département
+- [`plot(`*`<departement>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.departement.md)
+  : Visualiser la répartition des élus par catégorie
+  socio-professionnelle dans un département
 
-- [`summary(`*`<commune>`*`)`](summary.commune.md) : Résumer les
-  informations d'une commune
+- [`summary(`*`<commune>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.commune.md)
+  : Résumer les informations d'une commune
 
-- [`summary(`*`<departement>`*`)`](summary.departement.md) : Résumer les
-  informations d'un département
+- [`summary(`*`<departement>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.departement.md)
+  : Résumer les informations d'un département

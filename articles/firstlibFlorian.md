@@ -134,7 +134,7 @@ summary(df_Loire_Atlantique)
 summary(df_Gers)
 ```
 
-### Exemple d’utilisation de la fonction `generer_rapport` :
+### Exemple d’utilisation de la fonction `generer_rapport`
 
 ##### Description
 
