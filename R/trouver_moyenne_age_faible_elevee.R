@@ -19,35 +19,6 @@
 #' @importFrom purrr map
 #'
 #' @keywords internal
-#'
-#' @examples
-#' # Exemples d'utilisation
-#'
-#'
-#' # Données (villes ou départements)
-#'
-#' df_Nantes <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Nantes")
-#'
-#' df_Aignan <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Aignan")
-#'
-#' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-#'
-#' df_Gers <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Gers")
-#'
-#'
-#' # Utilisation de la fonction
-#'
-#' trouver_moyenne_age_faible_elevee(df_Nantes)
-#'
-#' trouver_moyenne_age_faible_elevee(df_Aignan)
-#'
-#' trouver_moyenne_age_faible_elevee(df_Loire_Atlantique)
-#'
-#' trouver_moyenne_age_faible_elevee(df_Gers)
 
 
 trouver_moyenne_age_faible_elevee <- function(df, ref_date = Sys.Date()) {

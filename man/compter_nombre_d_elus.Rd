@@ -16,33 +16,4 @@ Un entier représentant le nombre d'élus distincts dans le data.frame.
 Cette fonction compte le nombre d'élus distincts dans un data.frame en se basant
 sur les colonnes \verb{Nom de l'élu}, \verb{Prénom de l'élu}, et \verb{Date de naissance}.
 }
-\examples{
-# Exemples d'utilisation
-
-
-# Données (villes ou départements)
-
-df_Nantes <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Nantes")
-
-df_Aignan <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Aignan")
-
-df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-
-df_Gers <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Gers")
-
-
-# Utilisation de la fonction
-
-compter_nombre_d_elus(df_Nantes)
-
-compter_nombre_d_elus(df_Aignan)
-
-compter_nombre_d_elus(df_Loire_Atlantique)
-
-compter_nombre_d_elus(df_Gers)
-}
 \keyword{internal}

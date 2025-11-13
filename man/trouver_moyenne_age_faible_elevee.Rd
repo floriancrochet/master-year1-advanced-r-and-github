@@ -25,33 +25,4 @@ et la plus élevée. Elle regroupe les données par commune, applique une foncti
 de la distribution des âges des élus à chaque groupe, puis sélectionne les communes avec
 les moyennes d’âge les plus basses et les plus élevées.
 }
-\examples{
-# Exemples d'utilisation
-
-
-# Données (villes ou départements)
-
-df_Nantes <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Nantes")
-
-df_Aignan <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Aignan")
-
-df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-
-df_Gers <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Gers")
-
-
-# Utilisation de la fonction
-
-trouver_moyenne_age_faible_elevee(df_Nantes)
-
-trouver_moyenne_age_faible_elevee(df_Aignan)
-
-trouver_moyenne_age_faible_elevee(df_Loire_Atlantique)
-
-trouver_moyenne_age_faible_elevee(df_Gers)
-}
 \keyword{internal}

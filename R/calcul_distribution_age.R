@@ -18,35 +18,6 @@
 #' @importFrom tibble tibble
 #'
 #' @keywords internal
-#'
-#' @examples
-#' # Exemples d'utilisation
-#'
-#'
-#' # Données (villes ou départements)
-#'
-#' df_Nantes <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Nantes")
-#'
-#' df_Aignan <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Aignan")
-#'
-#' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-#'
-#' df_Gers <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Gers")
-#'
-#'
-#' # Utilisation de la fonction
-#'
-#' calcul_distribution_age(df_Nantes, ref_date = as.Date("2024-01-01"))
-#'
-#' calcul_distribution_age(df_Aignan, ref_date = as.Date("2024-01-01"))
-#'
-#' calcul_distribution_age(df_Loire_Atlantique, ref_date = as.Date("2024-01-01"))
-#'
-#' calcul_distribution_age(df_Gers, ref_date = as.Date("2024-01-01"))
 
 
 calcul_distribution_age <- function(df, ref_date = Sys.Date(), ...) {

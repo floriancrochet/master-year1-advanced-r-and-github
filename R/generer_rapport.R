@@ -27,86 +27,121 @@
 #'
 #' # Utilisation de la fonction
 #'
-#' # Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-#' # generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+#' ## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
+#' 
+#' tmp <- tempfile(fileext = ".html")
+#' generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 #'
-#' # Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-#' # generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+#' ## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en pdf
+#' 
+#' tmp <- tempfile(fileext = ".pdf")
+#' generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 #'
 #' @export
 
 
 generer_rapport <- function(commune, departement, output, df) {
-  # Vérifier la présence du logiciel Quarto
-  qp <- tryCatch(quarto::quarto_path(), error = function(e) "")
-  if (identical(qp, "") || !file.exists(qp)) {
-    stop("Le logiciel Quarto n'a pas été détecté sur cette machine.
-         Assure-toi qu'il est installé et accessible via quarto::quarto_path().",
+  # 1) Vérifier la présence du package 'quarto'
+  if (!requireNamespace("quarto", quietly = TRUE)) {
+    stop(
+      "Le package 'quarto' doit être installé pour utiliser generer_rapport().\n",
+      "Installe-le avec install.packages('quarto').",
       call. = FALSE
     )
   }
-
-  # Vérifier les arguments
-  stopifnot(is.character(commune), length(commune) == 1L)
-  stopifnot(is.character(departement), length(departement) == 1L)
-  stopifnot(is.character(output), length(output) == 1L)
-
+  
+  # 2) Vérifier la disponibilité du logiciel Quarto (la CLI)
+  if (!quarto::quarto_available()) {
+    stop(
+      "Le logiciel 'Quarto' n'a pas été détecté sur cette machine.\n",
+      "Vérifie que Quarto est installé et que quarto::quarto_path() fonctionne.",
+      call. = FALSE
+    )
+  }
+  
+  # 3) Vérifier les arguments
+  stopifnot(
+    is.character(commune),    length(commune)    == 1L,
+    is.character(departement), length(departement) == 1L,
+    is.character(output),     length(output)     == 1L
+  )
+  
   valider_schema(df)
-
-  # Localiser le fichier .qmd dans le package
+  
+  # 4) Localiser le fichier .qmd dans le package
   pkg <- utils::packageName()
   qmd_path <- system.file("rapport.qmd", package = pkg)
-  if (qmd_path == "") {
-    stop("Le fichier 'rapport.qmd' est introuvable dans le dossier inst/ du package.")
+  if (identical(qmd_path, "")) {
+    stop(
+      "Le fichier 'rapport.qmd' est introuvable dans le package.\n",
+      "Vérifie qu'il est bien placé dans le dossier inst/ du package.",
+      call. = FALSE
+    )
   }
-
+  
+  # 5) Gérer le chemin de sortie
   # Si seul un nom de fichier est donné, on l’écrit dans le répertoire de travail courant
   if (dirname(output) %in% c(".", "")) {
-    output <- normalizePath(file.path(getwd(), output), winslash = "/", mustWork = FALSE)
+    output <- normalizePath(
+      file.path(getwd(), output),
+      winslash = "/",
+      mustWork = FALSE
+    )
   }
-
-  # Vérifier que le chemin est absolu
+  
+  # Normaliser le chemin : absolu + "/"
+  output <- normalizePath(output, winslash = "/", mustWork = FALSE)
+  
+  # Vérifier que le chemin est absolu (Linux/Mac, Windows, UNC)
   if (!grepl("^(?:/|[A-Za-z]:/|//)", output)) {
-    stop("Le chemin doit être absolu (par exemple '/home/...', 'C:/...', ou '//serveur/...').")
+    stop(
+      "Le chemin doit être absolu (par exemple '/home/...', 'C:/...', ou '//serveur/...').",
+      call. = FALSE
+    )
   }
-
+  
   # Déterminer le chemin du dossier et le nom du fichier
-  out_dir <- dirname(output)
+  out_dir  <- dirname(output)
   out_file <- basename(output)
-
+  
   # Vérifier que le dossier de sortie existe déjà
   if (!dir.exists(out_dir)) {
-    stop(paste0(
-      "Le dossier de sortie n'existe pas : ", out_dir,
-      "\n(getwd() = ", getwd(), ")"
-    ))
+    stop(
+      paste0(
+        "Le dossier de sortie n'existe pas : ", out_dir,
+        "\n(getwd() = ", getwd(), ")"
+      ),
+      call. = FALSE
+    )
   }
-
-  # Déterminer le format de sortie à partir de l’extension
-  ext <- tolower(tools::file_ext(output))
+  
+  # 6) Déterminer le format de sortie à partir de l’extension
+  ext           <- tolower(tools::file_ext(output))
   valid_formats <- c("html", "pdf")
-  out_format <- if (ext %in% valid_formats) ext else NULL
-
-  # Sauvegarder le df dans un fichier temporaire (et le nettoyer ensuite)
+  out_format    <- if (ext %in% valid_formats) ext else NULL
+  
+  # 7) Sauvegarder df dans un fichier temporaire (et le nettoyer ensuite)
   df_name <- deparse(substitute(df))
   df_path <- file.path(tempdir(), paste0("temp_", df_name, ".rds"))
   saveRDS(df, df_path)
-  on.exit(if (file.exists(df_path)) unlink(df_path), add = TRUE)
-
-  # Exécuter le rendu du document Quarto avec les paramètres
+  on.exit({
+    if (file.exists(df_path)) unlink(df_path)
+  }, add = TRUE)
+  
+  # 8) Exécuter le rendu du document Quarto avec les paramètres
   quarto::quarto_render(
-    input = qmd_path,
-    output_file = out_file,
+    input         = qmd_path,
+    output_file   = out_file,
     output_format = out_format,
     execute_params = list(
-      code_commune = commune,
+      code_commune     = commune,
       code_departement = departement,
-      data.frame_name = df_name,
-      data.frame_path = df_path
+      data.frame_name  = df_name,
+      data.frame_path  = df_path
     ),
     quarto_args = c("--output-dir", out_dir)
   )
-
+  
   message(sprintf("Le rapport a été généré et enregistré dans : %s", output))
   invisible(NULL)
 }

@@ -95,7 +95,7 @@ plot.commune <- function(x, ...) {
   
   # Extraction de la légende
   leg_list <- get_plot_component(p, "guide-box", return_all = TRUE)
-  leg <- leg_list[[1]]
+  leg <- leg_list[[1]][[1]]
   
   # Graphique sans légende
   p_no_legend <- p + theme(legend.position = "none")

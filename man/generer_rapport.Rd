@@ -34,10 +34,14 @@ data("df_gers_loire_atlantique")
 
 # Utilisation de la fonction
 
-# Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-# generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
 
-# Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-# generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+tmp <- tempfile(fileext = ".html")
+generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
+
+## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en pdf
+
+tmp <- tempfile(fileext = ".pdf")
+generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 
 }

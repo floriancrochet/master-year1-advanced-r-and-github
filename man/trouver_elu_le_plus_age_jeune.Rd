@@ -28,33 +28,4 @@ dans un data.frame d'élus. Elle calcule l'âge des élus à partir de leur date
 puis retourne les informations concernant l'élu(e) le/la plus âgé(e) et le/la plus jeune.
 La fonction trie les élus par date de naissance et sélectionne le premier et le dernier élu.
 }
-\examples{
-# Exemples d'utilisation
-
-
-# Données (villes ou départements)
-
-df_Nantes <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Nantes")
-
-df_Aignan <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé de la commune` == "Aignan")
-
-df_Loire_Atlantique <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-
-df_Gers <- df_gers_loire_atlantique |>
-  dplyr::filter(`Libellé du département` == "Gers")
-
-
-# Utilisation de la fonction
-
-trouver_elu_le_plus_age_jeune(df_Nantes)
-
-trouver_elu_le_plus_age_jeune(df_Aignan)
-
-trouver_elu_le_plus_age_jeune(df_Loire_Atlantique)
-
-trouver_elu_le_plus_age_jeune(df_Gers)
-}
 \keyword{internal}

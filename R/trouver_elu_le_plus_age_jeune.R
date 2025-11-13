@@ -22,35 +22,6 @@
 #' @importFrom lubridate dmy interval time_length
 #'
 #' @keywords internal
-#'
-#' @examples
-#' # Exemples d'utilisation
-#'
-#'
-#' # Données (villes ou départements)
-#'
-#' df_Nantes <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Nantes")
-#'
-#' df_Aignan <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé de la commune` == "Aignan")
-#'
-#' df_Loire_Atlantique <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Loire-Atlantique")
-#'
-#' df_Gers <- df_gers_loire_atlantique |>
-#'   dplyr::filter(`Libellé du département` == "Gers")
-#'
-#'
-#' # Utilisation de la fonction
-#'
-#' trouver_elu_le_plus_age_jeune(df_Nantes)
-#'
-#' trouver_elu_le_plus_age_jeune(df_Aignan)
-#'
-#' trouver_elu_le_plus_age_jeune(df_Loire_Atlantique)
-#'
-#' trouver_elu_le_plus_age_jeune(df_Gers)
 
 
 trouver_elu_le_plus_age_jeune <- function(df, ref_date = Sys.Date()) {

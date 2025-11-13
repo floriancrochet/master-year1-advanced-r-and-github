@@ -1,3 +1,22 @@
+test_that("generer_rapport() renvoie une erreur claire si Quarto est indisponible", {
+  qp <- tryCatch(quarto::quarto_path(), error = function(e) "")
+  
+  if (identical(qp, "")) {
+    out_dir  <- withr::local_tempdir()
+    out_file <- file.path(normalizePath(out_dir, winslash = "/", mustWork = TRUE),
+                          "rapport_erreur.html")
+    
+    expect_error(
+      generer_rapport("44150", "44", out_file, df_gers_loire_atlantique),
+      "Le logiciel Quarto n'a pas été détecté"
+    )
+  } else {
+    succeed("Quarto est disponible : le scénario d'erreur ne s'applique pas.")
+  }
+})
+
+
+
 test_that("generer_rapport() s'exécute et crée le fichier attendu", {
   # Chemin absolu temporaire pour la sortie (et nettoyage auto du dossier)
   out_dir  <- withr::local_tempdir()
@@ -21,23 +40,4 @@ test_that("generer_rapport() s'exécute et crée le fichier attendu", {
   )
   
   expect_true(file.exists(out_file))
-})
-
-
-
-test_that("generer_rapport() renvoie une erreur claire si Quarto est indisponible", {
-  qp <- tryCatch(quarto::quarto_path(), error = function(e) "")
-  
-  if (identical(qp, "")) {
-    out_dir  <- withr::local_tempdir()
-    out_file <- file.path(normalizePath(out_dir, winslash = "/", mustWork = TRUE),
-                          "rapport_erreur.html")
-    
-    expect_error(
-      generer_rapport("44150", "44", out_file, df_gers_loire_atlantique),
-      "Le logiciel Quarto n'a pas été détecté"
-    )
-  } else {
-    succeed("Quarto est disponible : le scénario d'erreur ne s'applique pas.")
-  }
 })
