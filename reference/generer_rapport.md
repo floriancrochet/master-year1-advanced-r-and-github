@@ -50,9 +50,126 @@ data("df_gers_loire_atlantique")
 
 # Utilisation de la fonction
 
-# Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-# generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
 
-# Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en html
-# generer_rapport("44109", "44", "chemin/absolu/rapport_final.html", df_gers_loire_atlantique)
+tmp <- tempfile(fileext = ".html")
+generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
+#> 
+#> 
+#> processing file: rapport.qmd
+#> 1/19                  
+#> 2/19 [unnamed-chunk-1]
+#> 3/19                  
+#> 4/19 [unnamed-chunk-2]
+#> 5/19                  
+#> 6/19 [unnamed-chunk-3]
+#> 7/19                  
+#> 8/19 [unnamed-chunk-4]
+#> 9/19                  
+#> 10/19 [unnamed-chunk-5]
+#> 11/19                  
+#> 12/19 [unnamed-chunk-6]
+#> 13/19                  
+#> 14/19 [unnamed-chunk-7]
+#> 15/19                  
+#> 16/19 [unnamed-chunk-8]
+#> 17/19                  
+#> 18/19 [unnamed-chunk-9]
+#> 19/19                  
+#> output file: rapport.knit.md
+#> 
+#> pandoc 
+#>   to: html
+#>   output-file: /home/runner/work/_temp/Library/firstlibflorian/file1d038e641cc.html
+#>   standalone: true
+#>   section-divs: true
+#>   html-math-method: mathjax
+#>   wrap: none
+#>   default-image-extension: png
+#>   toc: true
+#>   incremental: true
+#>   variables: {}
+#>   
+#> metadata
+#>   document-css: false
+#>   link-citations: true
+#>   date-format: long
+#>   lang: en
+#>   title: Rapport
+#>   author: Florian CROCHET
+#>   toc-title: Sommaire
+#>   output-file: file1d038e641cc.html
+#>   
+#> Output created: ../../../../../../tmp/Rtmp4pgtQ0/file1d038e641cc.html
+#> 
+#> 
+#> Le rapport a été généré et enregistré dans : /tmp/Rtmp4pgtQ0/file1d038e641cc.html
+
+## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en pdf
+
+tmp <- tempfile(fileext = ".pdf")
+generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
+#> 
+#> 
+#> processing file: rapport.qmd
+#> 1/19                  
+#> 2/19 [unnamed-chunk-1]
+#> 3/19                  
+#> 4/19 [unnamed-chunk-2]
+#> 5/19                  
+#> 6/19 [unnamed-chunk-3]
+#> 7/19                  
+#> 8/19 [unnamed-chunk-4]
+#> 9/19                  
+#> 10/19 [unnamed-chunk-5]
+#> 11/19                  
+#> 12/19 [unnamed-chunk-6]
+#> 13/19                  
+#> 14/19 [unnamed-chunk-7]
+#> 15/19                  
+#> 16/19 [unnamed-chunk-8]
+#> 17/19                  
+#> 18/19 [unnamed-chunk-9]
+#> 19/19                  
+#> output file: rapport.knit.md
+#> 
+#> pandoc 
+#>   to: latex
+#>   output-file: rapport.tex
+#>   standalone: true
+#>   pdf-engine: lualatex
+#>   variables:
+#>     graphics: true
+#>     tables: true
+#>   default-image-extension: pdf
+#>   
+#> metadata
+#>   documentclass: scrartcl
+#>   classoption:
+#>     - DIV=11
+#>     - numbers=noendperiod
+#>   papersize: letter
+#>   header-includes:
+#>     - \KOMAoption{captions}{tableheading}
+#>   block-headings: true
+#>   title: Rapport
+#>   author: Florian CROCHET
+#>   output-file: file1d033c20bace.pdf
+#>   
+#> 
+#> Rendering PDF
+#> running lualatex - 1
+#> 
+#> No TeX installation was detected.
+#> 
+#> Please run 'quarto install tinytex' to install TinyTex.
+#> If you prefer, you may install TexLive or another TeX distribution.
+#> 
+#> WARN: Error encountered when rendering files
+#> 
+#> Error in quarto::quarto_render(input = qmd_path, output_file = out_file,     output_format = out_format, execute_params = list(code_commune = commune,         code_departement = departement, data.frame_name = df_name,         data.frame_path = df_path), quarto_args = c("--output-dir",         out_dir)): ! Error running quarto CLI from R.
+#> Caused by error:
+#> ! Could not evaluate cli `{}` expression: `captions`.
+#> Caused by error:
+#> ! object 'captions' not found
 ```

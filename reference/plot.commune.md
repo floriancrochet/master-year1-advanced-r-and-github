@@ -57,7 +57,6 @@ df_Aignan <- structure(df_Aignan, class = c("commune", class(df_Aignan)))
 # Utilisation de la fonction
 
 plot(df_Nantes)
-#> Warning: Cannot convert object of class list into a grob.
 #> $graphique
 
 #> 
@@ -69,7 +68,6 @@ plot(df_Nantes)
 #> 
 
 plot(df_Aignan)
-#> Warning: Cannot convert object of class list into a grob.
 #> $graphique
 
 #> 

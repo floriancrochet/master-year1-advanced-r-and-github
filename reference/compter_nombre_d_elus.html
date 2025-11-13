@@ -62,41 +62,6 @@ sur les colonnes <code>Nom de l'élu</code>, <code>Prénom de l'élu</code>, et 
     <p>Un entier représentant le nombre d'élus distincts dans le data.frame.</p>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Exemples d'utilisation</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Données (villes ou départements)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Nantes</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé de la commune`</span> <span class="op">==</span> <span class="st">"Nantes"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Aignan</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé de la commune`</span> <span class="op">==</span> <span class="st">"Aignan"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Loire_Atlantique</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé du département`</span> <span class="op">==</span> <span class="st">"Loire-Atlantique"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Gers</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé du département`</span> <span class="op">==</span> <span class="st">"Gers"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Utilisation de la fonction</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">compter_nombre_d_elus</span><span class="op">(</span><span class="va">df_Nantes</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in compter_nombre_d_elus(df_Nantes):</span> could not find function "compter_nombre_d_elus"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">compter_nombre_d_elus</span><span class="op">(</span><span class="va">df_Aignan</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in compter_nombre_d_elus(df_Aignan):</span> could not find function "compter_nombre_d_elus"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">compter_nombre_d_elus</span><span class="op">(</span><span class="va">df_Loire_Atlantique</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in compter_nombre_d_elus(df_Loire_Atlantique):</span> could not find function "compter_nombre_d_elus"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">compter_nombre_d_elus</span><span class="op">(</span><span class="va">df_Gers</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in compter_nombre_d_elus(df_Gers):</span> could not find function "compter_nombre_d_elus"</span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

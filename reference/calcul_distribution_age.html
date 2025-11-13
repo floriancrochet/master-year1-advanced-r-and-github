@@ -69,41 +69,6 @@ les statistiques d'âge : minimum, premier quartile (Q1), médiane, moyenne,
 troisième quartile (Q3) et maximum.</p>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Exemples d'utilisation</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Données (villes ou départements)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Nantes</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé de la commune`</span> <span class="op">==</span> <span class="st">"Nantes"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Aignan</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé de la commune`</span> <span class="op">==</span> <span class="st">"Aignan"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Loire_Atlantique</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé du département`</span> <span class="op">==</span> <span class="st">"Loire-Atlantique"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">df_Gers</span> <span class="op">&lt;-</span> <span class="va">df_gers_loire_atlantique</span> <span class="op">|&gt;</span></span></span>
-<span class="r-in"><span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">`Libellé du département`</span> <span class="op">==</span> <span class="st">"Gers"</span><span class="op">)</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Utilisation de la fonction</span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">calcul_distribution_age</span><span class="op">(</span><span class="va">df_Nantes</span>, ref_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2024-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in calcul_distribution_age(df_Nantes, ref_date = as.Date("2024-01-01")):</span> could not find function "calcul_distribution_age"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">calcul_distribution_age</span><span class="op">(</span><span class="va">df_Aignan</span>, ref_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2024-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in calcul_distribution_age(df_Aignan, ref_date = as.Date("2024-01-01")):</span> could not find function "calcul_distribution_age"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">calcul_distribution_age</span><span class="op">(</span><span class="va">df_Loire_Atlantique</span>, ref_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2024-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in calcul_distribution_age(df_Loire_Atlantique, ref_date = as.Date("2024-01-01")):</span> could not find function "calcul_distribution_age"</span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu">calcul_distribution_age</span><span class="op">(</span><span class="va">df_Gers</span>, ref_date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2024-01-01"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in calcul_distribution_age(df_Gers, ref_date = as.Date("2024-01-01")):</span> could not find function "calcul_distribution_age"</span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

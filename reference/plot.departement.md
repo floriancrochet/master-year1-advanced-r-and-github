@@ -65,7 +65,6 @@ df_Gers <- structure(
 # Utilisation de la fonction
 
 plot(df_Loire_Atlantique)
-#> Warning: Cannot convert object of class list into a grob.
 #> $graphique
 
 #> 
@@ -77,7 +76,6 @@ plot(df_Loire_Atlantique)
 #> 
 
 plot(df_Gers)
-#> Warning: Cannot convert object of class list into a grob.
 #> $graphique
 
 #> 
