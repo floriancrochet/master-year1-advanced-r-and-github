@@ -2,7 +2,7 @@
 % Please edit documentation in R/creer_commune.R
 \name{creer_commune}
 \alias{creer_commune}
-\title{Créer un objet de classe 'commune' à partir d'un data.frame}
+\title{Créer un objet de classe \code{commune} à partir d'un data.frame}
 \usage{
 creer_commune(df)
 }

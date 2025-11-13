@@ -2,7 +2,7 @@
 % Please edit documentation in R/creer_departement.R
 \name{creer_departement}
 \alias{creer_departement}
-\title{Créer un objet de classe 'departement' à partir d'un data.frame}
+\title{Créer un objet de classe \code{departement} à partir d'un data.frame}
 \usage{
 creer_departement(df)
 }
