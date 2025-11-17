@@ -19,10 +19,10 @@
 *.zip
 
 # === Rapports ou sorties temporaires ===
-*.html
 *.pdf
 *.docx
 *_files/
+inst/*.html
 rapport_files/
 vignettes/*_files/
 vignettes/*.html
