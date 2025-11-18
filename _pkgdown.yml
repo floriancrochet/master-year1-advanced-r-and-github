@@ -2,7 +2,7 @@ url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
 template:
   bootstrap: 5
   bootswatch: flatly
-  # Palette et polices (issu de Style 2 + adapté couleur)
+  # Palette et polices
   bslib:
     bg: "#E5ECF5"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
