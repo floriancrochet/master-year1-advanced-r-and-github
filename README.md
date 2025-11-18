@@ -1,11 +1,11 @@
-firstlibflorian
+# Bienvenue sur firstlibflorian
 
 A package for geographic and demographic analysis of French communes and
 departments.
 
-------------------------------------------------------------------------
+---
 
-📘 Overview
+## 📘 Overview
 
 firstlibflorian is an R package designed to analyze, summarize, and
 visualize demographic and geographic data for French communes and
@@ -22,9 +22,9 @@ Core objectives:
 -   Offer clear visualizations using ggplot2
 -   Ensure reproducibility and professional documentation
 
-------------------------------------------------------------------------
+---
 
-⚙️ Features
+## ⚙️ Features
 
 -   Creation of structured objects using creer_commune() and
     creer_departement()
@@ -35,18 +35,18 @@ Core objectives:
 -   Integration with pkgdown to publish documentation
 -   Support for vignettes built with Quarto
 
-------------------------------------------------------------------------
+---
 
-🛠️ Installation
+## 🛠️ Installation
 
 Install the package from GitHub:
 
     install.packages("devtools")
     devtools::install_github("floriancrochet/masters-year1-advanced-r-and-github")
 
-------------------------------------------------------------------------
+---
 
-📚 Usage Example
+## 📚 Usage Example
 
     library(firstlibflorian)
 
@@ -58,9 +58,9 @@ Additional examples appear in the package vignettes, including:
 -   Générer un rapport d’analyses
 -   Fonctions du package firstlibflorian
 
-------------------------------------------------------------------------
+---
 
-📂 Project Structure
+## 📂 Project Structure
 
     firstlibflorian/
     │
@@ -72,9 +72,9 @@ Additional examples appear in the package vignettes, including:
     ├── data/                 # Packaged datasets
     └── DESCRIPTION           # Package metadata
 
-------------------------------------------------------------------------
+---
 
-🔍 Main Functions
+## 🔍 Main Functions
 
 Constructors
 
@@ -106,9 +106,9 @@ Reporting
     Generates a Quarto report (rapport.html) for a chosen commune and
     department, then moves it to the user-specified destination.
 
-------------------------------------------------------------------------
+---
 
-📊 Results
+## 📊 Results
 
 Example output from generer_rapport() includes:
 
@@ -119,9 +119,9 @@ Example output from generer_rapport() includes:
 
   To be completed (insert illustration when available).
 
-------------------------------------------------------------------------
+---
 
-🧠 References
+## 🧠 References
 
 The package and its development rely on concepts introduced in:
 
@@ -130,23 +130,23 @@ The package and its development rely on concepts introduced in:
 -   Quarto documentation for report creation
 -   usethis, devtools, testthat workflows for package development
 
-------------------------------------------------------------------------
+---
 
-📜 License
+## 📜 License
 
 GPL-3
 © Florian Crochet
 
-------------------------------------------------------------------------
+---
 
-👤 Author
+## 👤 Author
 
 Florian Crochet
 GitHub: https://github.com/floriancrochet
 
-------------------------------------------------------------------------
+---
 
-💬 Acknowledgments
+## 💬 Acknowledgments
 
 This work was completed as part of the Advanced R and Introduction to
 Git project. Thanks to Raphaël Nedellec for course material and
