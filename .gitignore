@@ -31,7 +31,6 @@ vignettes/*.html
 /.Rcheck/
 /Meta/
 /doc/
-/docs/  # site pkgdown (sera reconstruit)
 /pkgdown/
 /renv/
 /renv.lock
@@ -46,4 +45,5 @@ __pycache__/
 # === Systèmes externes ===
 .DS_Store
 Thumbs.db
-docs
+/docs/*
+!docs/style.css
