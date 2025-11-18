@@ -1,4 +1,40 @@
 url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
 template:
   bootstrap: 5
+  bootswatch: flatly
+  # Palette et polices (issu de Style 2 + adapté couleur)
+  bslib:
+    bg: "#E5ECF5"        # Bleu gris pour le fond global
+    fg: "#111827"        # Texte principal sombre
+    primary: "#142A44"   # Bleu marine
+    navbar-bg: "#142A44" # Entête bleu marine
+    navbar-fg: "#F5F7FA" # Texte clair dans la navbar
+    base_font:
+      google: "Raleway"
+    heading_font:
+      google: "Noto Sans"
+    code_font:
+      google: "Inconsolata"
+
+  # Injection de la feuille de style CSS
+  includes:
+    in_header: >
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../style.css">
+      <link rel="stylesheet" href="../../style.css">
+
+navbar:
+  structure:
+    left:  [home, articles, references]
+    right: [search, github]
+  components:
+    home:
+      title: "Présentation"
+      href: index.html
+    articles:
+      title: "Articles"
+      href: articles/index.html
+    references:
+      title: "Références"
+      href: reference/index.html
 
