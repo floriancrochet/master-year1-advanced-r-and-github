@@ -1,4 +1,4 @@
-# Bienvenue sur firstlibflorian
+# Welcome to the firstlibflorian package
 
 A package for geographic and demographic analysis of French communes and
 departments.
