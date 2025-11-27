@@ -4,7 +4,7 @@ template:
   bootstrap: 5
   bootswatch: flatly
   bslib:
-    bg: "#C2CCDB"        # Bleu gris pour le fond global
+    bg: "#D0D8E4"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
     primary: "#142A44"   # Bleu marine
     navbar-bg: "#142A44" # Entête bleu marine
