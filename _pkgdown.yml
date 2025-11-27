@@ -1,10 +1,10 @@
-url: https://pierreqdk.github.io/librairie-/  # À adapter à ton dépôt
+url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
 
 template:
   bootstrap: 5
   bootswatch: flatly
   bslib:
-    bg: "#C2CCDB"        # Bleu gris pour le fond global
+    bg: "#A8B4C3"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
     primary: "#142A44"   # Bleu marine
     navbar-bg: "#142A44" # Entête bleu marine
