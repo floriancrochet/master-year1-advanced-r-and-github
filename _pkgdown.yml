@@ -4,7 +4,7 @@ template:
   bootstrap: 5
   bootswatch: flatly
   bslib:
-    bg: "#A8B4C3"        # Bleu gris pour le fond global
+    bg: "#B5C0CF"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
     primary: "#142A44"   # Bleu marine
     navbar-bg: "#142A44" # Entête bleu marine
@@ -29,7 +29,7 @@ navbar:
 
   components:
     home:
-      text: "Présentation"      # <--- avant c’était `title`
+      text: "Overview"      # <--- avant c’était `title`
       href: index.html
 
     articles:
@@ -37,5 +37,5 @@ navbar:
       href: articles/index.html
 
     reference:
-      text: "Références"        # <--- idem
+      text: "References"        # <--- idem
       href: reference/index.html
