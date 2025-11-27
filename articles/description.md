@@ -46,20 +46,20 @@ supplémentaires :
 
 Les principales fonctions du package sont les suivantes :
 
-- [`creer_commune()`](https://pierreqdk.github.io/librairie-/reference/creer_commune.md)
+- [`creer_commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_commune.md)
   : Créer un objet de classe `commune`.
-- [`creer_departement()`](https://pierreqdk.github.io/librairie-/reference/creer_departement.md)
+- [`creer_departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_departement.md)
   : Créer un objet de classe `departement`.
-- [`generer_rapport()`](https://pierreqdk.github.io/librairie-/reference/generer_rapport.md)
+- [`generer_rapport()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/generer_rapport.md)
   : Générer un rapport statistique pour un objet `commune` ou
   `departement`.
-- [`plot.commune()`](https://pierreqdk.github.io/librairie-/reference/plot.commune.md)
+- [`plot.commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.commune.md)
   : Visualiser les données géographiques d’une commune.
-- [`plot.departement()`](https://pierreqdk.github.io/librairie-/reference/plot.departement.md)
+- [`plot.departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.departement.md)
   : Visualiser les données géographiques d’un département.
-- [`summary.commune()`](https://pierreqdk.github.io/librairie-/reference/summary.commune.md)
+- [`summary.commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.commune.md)
   : Résumé statistique d’un objet `commune`.
-- [`summary.departement()`](https://pierreqdk.github.io/librairie-/reference/summary.departement.md)
+- [`summary.departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.departement.md)
   : Résumé statistique d’un objet `departement`.
 
 ## Installation
