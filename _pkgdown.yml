@@ -1,8 +1,8 @@
-url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
+url: https://pierreqdk.github.io/librairie-/  # À adapter à ton dépôt
+
 template:
   bootstrap: 5
   bootswatch: flatly
-  # Palette et polices
   bslib:
     bg: "#E5ECF5"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
@@ -16,7 +16,6 @@ template:
     code_font:
       google: "Inconsolata"
 
-  # Injection de la feuille de style CSS
   includes:
     in_header: >
       <link rel="stylesheet" href="style.css">
@@ -25,16 +24,18 @@ template:
 
 navbar:
   structure:
-    left:  [home, articles, references]
+    left:  [home, articles, reference]
     right: [search, github]
+
   components:
     home:
-      title: "Présentation"
+      text: "Présentation"      # <--- avant c’était `title`
       href: index.html
-    articles:
-      title: "Articles"
-      href: articles/index.html
-    references:
-      title: "Références"
-      href: reference/index.html
 
+    articles:
+      text: "Articles"          # <--- idem
+      href: articles/index.html
+
+    reference:
+      text: "Références"        # <--- idem
+      href: reference/index.html
