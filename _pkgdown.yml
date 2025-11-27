@@ -2,7 +2,7 @@ url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
 
 template:
   bootstrap: 5
-  bootswatch: cosmo
+  bootswatch: cyborg
   bslib:
     bg: "#D0D8E4"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
