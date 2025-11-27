@@ -2,13 +2,14 @@ url: https://floriancrochet.github.io/master-year1-advanced-r-and-github/
 
 template:
   bootstrap: 5
-  bootswatch: materias
+  bootswatch: flatly
   bslib:
     bg: "#D0D8E4"        # Bleu gris pour le fond global
     fg: "#111827"        # Texte principal sombre
     primary: "#142A44"   # Bleu marine
     navbar-bg: "#142A44" # Entête bleu marine
     navbar-fg: "#F5F7FA" # Texte clair dans la navbar
+    link-color: "#142A44"
     base_font:
       google: "Raleway"
     heading_font:
