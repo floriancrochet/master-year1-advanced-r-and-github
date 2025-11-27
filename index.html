@@ -8,17 +8,23 @@
 <title>"Analyse et visualisation des données géographiques et démographiques des communes et départements" • firstlibflorian</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Raleway-0.4.10/font.css" rel="stylesheet">
+<link href="deps/Inconsolata-0.4.10/font.css" rel="stylesheet">
+<link href="deps/Noto_Sans-0.4.10/font.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="" analyse et visualisation des donn g d communes>
 <meta name="description" content="Ce package permet d'analyser et de visualiser des données géographiques et démographiques des communes et départements. Il offre des résumés statistiques et permet de créer et manipuler des objets de classe `commune` ou `departement`. Des fonctions de visualisation génèrent des graphiques pour explorer les caractéristiques des communes et départements.">
 <meta property="og:description" content="Ce package permet d'analyser et de visualiser des données géographiques et démographiques des communes et départements. Il offre des résumés statistiques et permet de créer et manipuler des objets de classe `commune` ou `departement`. Des fonctions de visualisation génèrent des graphiques pour explorer les caractéristiques des communes et départements.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
     <a class="navbar-brand me-2" href="index.html">firstlibflorian</a>
 
@@ -31,15 +37,9 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
-<li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/description.html">Bienvenue dans la documentation de firstlibflorian</a></li>
-    <li><a class="dropdown-item" href="articles/firstlibFlorian.html">Générer un rapport d'analyses</a></li>
-    <li><a class="dropdown-item" href="articles/fonctions.html">Fonctions du package firstlibflorian</a></li>
-  </ul>
-</li>
+<li class="active nav-item"><a class="nav-link" href="index.html">Présentation</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/index.html">Articles</a></li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Références</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -53,10 +53,14 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><p>firstlibflorian</p>
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="bienvenue-sur-firstlibflorian">Bienvenue sur firstlibflorian<a class="anchor" aria-label="anchor" href="#bienvenue-sur-firstlibflorian"></a>
+</h1></div>
 <p>A package for geographic and demographic analysis of French communes and departments.</p>
 <hr>
-<p>📘 Overview</p>
+<div class="section level2">
+<h2 id="id_-overview">📘 Overview<a class="anchor" aria-label="anchor" href="#id_-overview"></a>
+</h2>
 <p>firstlibflorian is an R package designed to analyze, summarize, and visualize demographic and geographic data for French communes and departments. The package originates from coursework in Advanced R and Introduction to Git and includes S3 classes, reporting tools, documentation, vignettes, and pkgdown integration.</p>
 <p>Core objectives:</p>
 <ul>
@@ -66,7 +70,10 @@
 <li>Ensure reproducibility and professional documentation</li>
 </ul>
 <hr>
-<p>⚙️ Features</p>
+</div>
+<div class="section level2">
+<h2 id="id_️-features">⚙️ Features<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-features"></a>
+</h2>
 <ul>
 <li>Creation of structured objects using creer_commune() and creer_departement()</li>
 <li>Statistical summaries with summary.commune() and summary.departement()</li>
@@ -76,12 +83,18 @@
 <li>Support for vignettes built with Quarto</li>
 </ul>
 <hr>
-<p>🛠️ Installation</p>
+</div>
+<div class="section level2">
+<h2 id="id_️-installation">🛠️ Installation<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-installation"></a>
+</h2>
 <p>Install the package from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"floriancrochet/masters-year1-advanced-r-and-github"</span>)</span></code></pre></div>
 <hr>
-<p>📚 Usage Example</p>
+</div>
+<div class="section level2">
+<h2 id="id_-usage-example">📚 Usage Example<a class="anchor" aria-label="anchor" href="#id_-usage-example"></a>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(firstlibflorian)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Example: Generate a report for Nantes (commune 44109) and Loire-Atlantique (department 44)</span></span>
@@ -92,7 +105,10 @@
 <li>Fonctions du package firstlibflorian</li>
 </ul>
 <hr>
-<p>📂 Project Structure</p>
+</div>
+<div class="section level2">
+<h2 id="id_-project-structure">📂 Project Structure<a class="anchor" aria-label="anchor" href="#id_-project-structure"></a>
+</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>firstlibflorian<span class="sc">/</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>│</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>├── R<span class="sc">/</span>                    <span class="co"># Source code (constructors, S3 methods, utilities)</span></span>
@@ -103,7 +119,10 @@
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>├── data<span class="sc">/</span>                 <span class="co"># Packaged datasets</span></span>
 <span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>└── DESCRIPTION           <span class="co"># Package metadata</span></span></code></pre></div>
 <hr>
-<p>🔍 Main Functions</p>
+</div>
+<div class="section level2">
+<h2 id="id_-main-functions">🔍 Main Functions<a class="anchor" aria-label="anchor" href="#id_-main-functions"></a>
+</h2>
 <p>Constructors</p>
 <ul>
 <li><p>creer_commune() Creates an S3 object of class commune.</p></li>
@@ -124,7 +143,10 @@
 <li>generer_rapport() Generates a Quarto report (rapport.html) for a chosen commune and department, then moves it to the user-specified destination.</li>
 </ul>
 <hr>
-<p>📊 Results</p>
+</div>
+<div class="section level2">
+<h2 id="id_-results">📊 Results<a class="anchor" aria-label="anchor" href="#id_-results"></a>
+</h2>
 <p>Example output from generer_rapport() includes:</p>
 <ul>
 <li>Age distribution tables</li>
@@ -134,7 +156,10 @@
 </ul>
 <p>To be completed (insert illustration when available).</p>
 <hr>
-<p>🧠 References</p>
+</div>
+<div class="section level2">
+<h2 id="id_-references">🧠 References<a class="anchor" aria-label="anchor" href="#id_-references"></a>
+</h2>
 <p>The package and its development rely on concepts introduced in:</p>
 <ul>
 <li>Course materials: R avancé et introduction à Git</li>
@@ -143,15 +168,25 @@
 <li>usethis, devtools, testthat workflows for package development</li>
 </ul>
 <hr>
-<p>📜 License</p>
+</div>
+<div class="section level2">
+<h2 id="id_-license">📜 License<a class="anchor" aria-label="anchor" href="#id_-license"></a>
+</h2>
 <p>GPL-3 © Florian Crochet</p>
 <hr>
-<p>👤 Author</p>
+</div>
+<div class="section level2">
+<h2 id="id_-author">👤 Author<a class="anchor" aria-label="anchor" href="#id_-author"></a>
+</h2>
 <p>Florian Crochet GitHub: <a href="https://github.com/floriancrochet" class="external-link uri">https://github.com/floriancrochet</a></p>
 <hr>
-<p>💬 Acknowledgments</p>
+</div>
+<div class="section level2">
+<h2 id="id_-acknowledgments">💬 Acknowledgments<a class="anchor" aria-label="anchor" href="#id_-acknowledgments"></a>
+</h2>
 <p>This work was completed as part of the Advanced R and Introduction to Git project. Thanks to Raphaël Nedellec for course material and guidance.</p>
-
+</div>
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

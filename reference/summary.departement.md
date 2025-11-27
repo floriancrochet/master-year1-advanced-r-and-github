@@ -102,7 +102,7 @@ summary(df_Loire_Atlantique)
 #> # A tibble: 2 × 7
 #>   Nom                    Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>                <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Le Pin                  34    39      42      45    51    60
+#> 1 Le Pin                  34    39      43      45    51    60
 #> 2 Les Moutiers-En-Retz    51    64      71      69    74    82
 
 summary(df_Gers)

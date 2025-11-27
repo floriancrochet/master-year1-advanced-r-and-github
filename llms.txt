@@ -1,11 +1,11 @@
-firstlibflorian
+# Bienvenue sur firstlibflorian
 
 A package for geographic and demographic analysis of French communes and
 departments.
 
 ------------------------------------------------------------------------
 
-📘 Overview
+## 📘 Overview
 
 firstlibflorian is an R package designed to analyze, summarize, and
 visualize demographic and geographic data for French communes and
@@ -23,7 +23,7 @@ Core objectives:
 
 ------------------------------------------------------------------------
 
-⚙️ Features
+## ⚙️ Features
 
 - Creation of structured objects using creer_commune() and
   creer_departement()
@@ -35,7 +35,7 @@ Core objectives:
 
 ------------------------------------------------------------------------
 
-🛠️ Installation
+## 🛠️ Installation
 
 Install the package from GitHub:
 
@@ -46,7 +46,7 @@ devtools::install_github("floriancrochet/masters-year1-advanced-r-and-github")
 
 ------------------------------------------------------------------------
 
-📚 Usage Example
+## 📚 Usage Example
 
 ``` R
 library(firstlibflorian)
@@ -62,7 +62,7 @@ Additional examples appear in the package vignettes, including:
 
 ------------------------------------------------------------------------
 
-📂 Project Structure
+## 📂 Project Structure
 
 ``` R
 firstlibflorian/
@@ -78,7 +78,7 @@ firstlibflorian/
 
 ------------------------------------------------------------------------
 
-🔍 Main Functions
+## 🔍 Main Functions
 
 Constructors
 
@@ -109,7 +109,7 @@ Reporting
 
 ------------------------------------------------------------------------
 
-📊 Results
+## 📊 Results
 
 Example output from generer_rapport() includes:
 
@@ -122,7 +122,7 @@ To be completed (insert illustration when available).
 
 ------------------------------------------------------------------------
 
-🧠 References
+## 🧠 References
 
 The package and its development rely on concepts introduced in:
 
@@ -133,19 +133,19 @@ The package and its development rely on concepts introduced in:
 
 ------------------------------------------------------------------------
 
-📜 License
+## 📜 License
 
 GPL-3 © Florian Crochet
 
 ------------------------------------------------------------------------
 
-👤 Author
+## 👤 Author
 
 Florian Crochet GitHub: <https://github.com/floriancrochet>
 
 ------------------------------------------------------------------------
 
-💬 Acknowledgments
+## 💬 Acknowledgments
 
 This work was completed as part of the Advanced R and Introduction to
 Git project. Thanks to Raphaël Nedellec for course material and
@@ -155,34 +155,34 @@ guidance.
 
 ## All functions
 
-- [`creer_commune()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_commune.md)
+- [`creer_commune()`](https://pierreqdk.github.io/librairie-/reference/creer_commune.md)
   :
 
   Créer un objet de classe `commune` à partir d'un data.frame
 
-- [`creer_departement()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/creer_departement.md)
+- [`creer_departement()`](https://pierreqdk.github.io/librairie-/reference/creer_departement.md)
   :
 
   Créer un objet de classe `departement` à partir d'un data.frame
 
-- [`df_gers_loire_atlantique`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/df_gers_loire_atlantique.md)
+- [`df_gers_loire_atlantique`](https://pierreqdk.github.io/librairie-/reference/df_gers_loire_atlantique.md)
   : Données des élus des départements du Gers et de la Loire-Atlantique
 
-- [`generer_rapport()`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/generer_rapport.md)
+- [`generer_rapport()`](https://pierreqdk.github.io/librairie-/reference/generer_rapport.md)
   : Générer un rapport Quarto et le déplacer vers un chemin spécifié
 
-- [`plot(`*`<commune>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.commune.md)
+- [`plot(`*`<commune>`*`)`](https://pierreqdk.github.io/librairie-/reference/plot.commune.md)
   : Visualiser la répartition des élus par catégorie
   socio-professionnelle dans une commune
 
-- [`plot(`*`<departement>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/plot.departement.md)
+- [`plot(`*`<departement>`*`)`](https://pierreqdk.github.io/librairie-/reference/plot.departement.md)
   : Visualiser la répartition des élus par catégorie
   socio-professionnelle dans un département
 
-- [`summary(`*`<commune>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.commune.md)
+- [`summary(`*`<commune>`*`)`](https://pierreqdk.github.io/librairie-/reference/summary.commune.md)
   : Résumer les informations d'une commune
 
-- [`summary(`*`<departement>`*`)`](https://floriancrochet.github.io/master-year1-advanced-r-and-github/reference/summary.departement.md)
+- [`summary(`*`<departement>`*`)`](https://pierreqdk.github.io/librairie-/reference/summary.departement.md)
   : Résumer les informations d'un département
 
 # Articles
@@ -190,8 +190,8 @@ guidance.
 ### All vignettes
 
 - [Bienvenue dans la documentation de
-  firstlibflorian](https://floriancrochet.github.io/master-year1-advanced-r-and-github/articles/description.md):
+  firstlibflorian](https://pierreqdk.github.io/librairie-/articles/description.md):
 - [Générer un rapport
-  d'analyses](https://floriancrochet.github.io/master-year1-advanced-r-and-github/articles/firstlibFlorian.md):
+  d'analyses](https://pierreqdk.github.io/librairie-/articles/firstlibFlorian.md):
 - [Fonctions du package
-  firstlibflorian](https://floriancrochet.github.io/master-year1-advanced-r-and-github/articles/fonctions.md):
+  firstlibflorian](https://pierreqdk.github.io/librairie-/articles/fonctions.md):
