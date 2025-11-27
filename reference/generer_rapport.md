@@ -80,7 +80,7 @@ generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 #> 
 #> pandoc 
 #>   to: html
-#>   output-file: /home/runner/work/_temp/Library/firstlibflorian/file18de42ba26ff.html
+#>   output-file: /home/runner/work/_temp/Library/firstlibflorian/file18d560cec3f.html
 #>   standalone: true
 #>   section-divs: true
 #>   html-math-method: mathjax
@@ -98,12 +98,12 @@ generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 #>   title: Rapport
 #>   author: Florian CROCHET
 #>   toc-title: Sommaire
-#>   output-file: file18de42ba26ff.html
+#>   output-file: file18d560cec3f.html
 #>   
-#> Output created: ../../../../../../tmp/RtmpWMuVBZ/file18de42ba26ff.html
+#> Output created: ../../../../../../tmp/RtmpUdvSDX/file18d560cec3f.html
 #> 
 #> 
-#> Le rapport a été généré et enregistré dans : /tmp/RtmpWMuVBZ/file18de42ba26ff.html
+#> Le rapport a été généré et enregistré dans : /tmp/RtmpUdvSDX/file18d560cec3f.html
 
 ## Générer un rapport pour Nantes (44109) et la Loire-Atlantique (44) en pdf
 
@@ -154,7 +154,7 @@ generer_rapport("44109", "44", tmp, df_gers_loire_atlantique)
 #>   block-headings: true
 #>   title: Rapport
 #>   author: Florian CROCHET
-#>   output-file: file18de6a9fe14c.pdf
+#>   output-file: file18d5d15507f.pdf
 #>   
 #> 
 #> Rendering PDF
