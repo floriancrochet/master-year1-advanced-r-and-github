@@ -68,13 +68,13 @@ summary(df_Nantes)
 #> # A tibble: 1 × 7
 #>   Nom      Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>  <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Nantes    28    43      51      50    59    73
+#> 1 Nantes    29    43      51      51    59    74
 #> 
 #> Nom et âge de l’élu.e le ou la plus âgé.e :
 #> # A tibble: 1 × 4
 #>   `Nom de l'élu` `Prénom de l'élu` `Date de naissance`   âge
 #>   <chr>          <chr>             <date>              <dbl>
-#> 1 PROCHASSON     François          1952-02-28             73
+#> 1 PROCHASSON     François          1952-02-28             74
 
 summary(df_Aignan)
 #> Nom de la commune :  Aignan .
@@ -85,11 +85,11 @@ summary(df_Aignan)
 #> # A tibble: 1 × 7
 #>   Nom      Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>  <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Aignan    36    55      62      60    67    77
+#> 1 Aignan    37    55      62      61    68    78
 #> 
 #> Nom et âge de l’élu.e le ou la plus âgé.e :
 #> # A tibble: 1 × 4
 #>   `Nom de l'élu` `Prénom de l'élu` `Date de naissance`   âge
 #>   <chr>          <chr>             <date>              <dbl>
-#> 1 GARROS         Marc              1948-02-19             77
+#> 1 GARROS         Marc              1948-02-19             78
 ```

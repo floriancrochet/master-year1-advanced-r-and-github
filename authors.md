@@ -9,7 +9,7 @@
 Source:
 [`DESCRIPTION`](https://github.com/floriancrochet/master-year1-advanced-r-and-github/blob/main/DESCRIPTION)
 
-Crochet F (2025). *firstlibflorian: "Analyse et visualisation des
+Crochet F (2026). *firstlibflorian: "Analyse et visualisation des
 données géographiques et démographiques des communes et départements"*.
 R package version 0.1.0,
 <https://floriancrochet.github.io/master-year1-advanced-r-and-github>.
@@ -17,7 +17,7 @@ R package version 0.1.0,
     @Manual{,
       title = {firstlibflorian: "Analyse et visualisation des données géographiques et démographiques des communes et départements"},
       author = {Florian Crochet},
-      year = {2025},
+      year = {2026},
       note = {R package version 0.1.0},
       url = {https://floriancrochet.github.io/master-year1-advanced-r-and-github},
     }

@@ -88,7 +88,7 @@ summary(df_Loire_Atlantique)
 #> # A tibble: 1 × 7
 #>   Nom                Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>            <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Loire-Atlantique    23    47      54      55    64    85
+#> 1 Loire-Atlantique    23    47      55      55    64    85
 #> 
 #> Nom et âge de l’élu.e le ou la plus âgé.e et de l’élu.e le ou la plus jeune, ainsi que leur commune :
 #> # A tibble: 2 × 5
@@ -102,8 +102,8 @@ summary(df_Loire_Atlantique)
 #> # A tibble: 2 × 7
 #>   Nom                    Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>                <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Le Pin                  34    39      43      45    51    60
-#> 2 Les Moutiers-En-Retz    51    64      71      69    74    82
+#> 1 Le Pin                  35    39      43      45    52    60
+#> 2 Les Moutiers-En-Retz    51    64      71      69    75    82
 
 summary(df_Gers)
 #>  Code du département Libellé du département
