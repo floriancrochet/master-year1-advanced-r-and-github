@@ -2,7 +2,7 @@ Package: firstlibflorian
 Title: "Analyse et visualisation des données géographiques et démographiques des communes et départements"
 Version: 0.1.0
 Authors@R: 
-    person("Florian", "Crochet", email = "8flocht8@gmail.com", role = c("aut", "cre"))
+    person("Florian", "Crochet", email = "floriancrochet1@gmail.com", role = c("aut", "cre"))
 Description: 
     Ce package permet d'analyser et de visualiser des données géographiques et démographiques des communes et départements. 
     Il offre des résumés statistiques et permet de créer et manipuler des objets de classe `commune` ou `departement`. 
