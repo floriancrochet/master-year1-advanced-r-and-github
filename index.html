@@ -54,20 +54,26 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="welcome-to-the-firstlibflorian-package">Welcome to the firstlibflorian package<a class="anchor" aria-label="anchor" href="#welcome-to-the-firstlibflorian-package"></a>
+<div class="page-header"><h1 id="french-demographic-analysis---r-package">French Demographic Analysis - R Package<a class="anchor" aria-label="anchor" href="#french-demographic-analysis---r-package"></a>
 </h1></div>
-<p>A package for geographic and demographic analysis of French communes and departments.</p>
+<p><em>This R package provides tools for structural demographic and geographic analysis.</em></p>
+<p><a href="https://floriancrochet.github.io/master-year1-advanced-r-and-github"><strong>Package Documentation (Online)</strong></a></p>
 <hr>
 <div class="section level2">
-<h2 id="id_-overview">📘 Overview<a class="anchor" aria-label="anchor" href="#id_-overview"></a>
+<h2 id="id_-overview">🎯 Overview<a class="anchor" aria-label="anchor" href="#id_-overview"></a>
 </h2>
-<p>firstlibflorian is an R package designed to analyze, summarize, and visualize demographic and geographic data for French communes and departments. The package originates from coursework in Advanced R and Introduction to Git and includes S3 classes, reporting tools, documentation, vignettes, and pkgdown integration.</p>
-<p>Core objectives:</p>
+<p>This project provides tools for demographic and geographic data analysis of French communes and departments.<br>
+This work was developed within the context of the Advanced R and Introduction to Git coursework.</p>
+<p><strong>Objectives</strong> - Construct custom classes for communes and departments - Automate demographic and statistical reporting via Quarto - Generate clear visualizations using ggplot2 - Ensure reproducible and professionally documented workflows</p>
+<hr>
+</div>
+<div class="section level2">
+<h2 id="id_️-data">🗄️ Data<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-data"></a>
+</h2>
 <ul>
-<li>Provide constructors and summaries for custom classes commune and departement</li>
-<li>Enable statistical and demographic reporting through Quarto</li>
-<li>Offer clear visualizations using ggplot2</li>
-<li>Ensure reproducibility and professional documentation</li>
+<li>
+<strong>Data Availability:</strong> Packaged dataset provided in <code>data/</code>
+</li>
 </ul>
 <hr>
 </div>
@@ -75,104 +81,90 @@
 <h2 id="id_️-features">⚙️ Features<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-features"></a>
 </h2>
 <ul>
-<li>Creation of structured objects using creer_commune() and creer_departement()</li>
-<li>Statistical summaries with summary.commune() and summary.departement()</li>
-<li>Visualizations via plot.commune() and plot.departement()</li>
-<li>Automated generation of Quarto reports through generer_rapport()</li>
-<li>Integration with pkgdown to publish documentation</li>
-<li>Support for vignettes built with Quarto</li>
+<li>
+<strong>Create Custom Classes:</strong> Represent communes and departments via S3 structured objects</li>
+<li>
+<strong>Summarize Statistical Metrics:</strong> Compute demographic metrics at regional levels</li>
+<li>
+<strong>Visualize Population Data:</strong> Display commune and department data graphically</li>
+<li>
+<strong>Automate Quarto Reporting:</strong> Generate interactive analytical reports seamlessly</li>
+<li>
+<strong>Publish Package Documentation:</strong> Deploy comprehensive reference materials using pkgdown</li>
+<li>
+<strong>Integrate Rmd Vignettes:</strong> Support instructional demonstrations directly within Quarto</li>
 </ul>
 <hr>
 </div>
 <div class="section level2">
-<h2 id="id_️-installation">🛠️ Installation<a class="anchor" aria-label="anchor" href="#id_%EF%B8%8F-installation"></a>
+<h2 id="id_-tech-stack">🧰 Tech Stack<a class="anchor" aria-label="anchor" href="#id_-tech-stack"></a>
 </h2>
-<p>Install the package from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"floriancrochet/masters-year1-advanced-r-and-github"</span>)</span></code></pre></div>
-<hr>
-</div>
-<div class="section level2">
-<h2 id="id_-usage-example">📚 Usage Example<a class="anchor" aria-label="anchor" href="#id_-usage-example"></a>
-</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(firstlibflorian)</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Example: Generate a report for Nantes (commune 44109) and Loire-Atlantique (department 44)</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">generer_rapport</span>(<span class="dv">44109</span>, <span class="dv">44</span>, <span class="st">"path/to/output.html"</span>)</span></code></pre></div>
-<p>Additional examples appear in the package vignettes, including:</p>
 <ul>
-<li>Générer un rapport d’analyses</li>
-<li>Fonctions du package firstlibflorian</li>
+<li>
+<strong>Language:</strong> R (&gt;= 4.1.0)</li>
+<li>
+<strong>Data Manipulation:</strong> dplyr, tibble, stringr, lubridate, purrr</li>
+<li>
+<strong>Visualization:</strong> ggplot2, cowplot</li>
+<li>
+<strong>Deployment &amp; MLOps:</strong> Quarto, pkgdown, devtools, roxygen2, usethis, testthat, knitr, rmarkdown</li>
 </ul>
 <hr>
+</div>
+<div class="section level2">
+<h2 id="id_-installation">📦 Installation<a class="anchor" aria-label="anchor" href="#id_-installation"></a>
+</h2>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"floriancrochet/master-year1-advanced-r-and-github"</span><span class="op">)</span></span></code></pre></div>
+<hr>
+</div>
+<div class="section level2">
+<h2 id="id_-usage-example">💻 Usage Example<a class="anchor" aria-label="anchor" href="#id_-usage-example"></a>
+</h2>
+<div class="section level3">
+<h3 id="reproducing-the-analysis--execution-pipeline">Reproducing the Analysis / Execution Pipeline<a class="anchor" aria-label="anchor" href="#reproducing-the-analysis--execution-pipeline"></a>
+</h3>
+<p><em>(Expected runtime: ~20 seconds on AMD Ryzen 7)</em></p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://floriancrochet.github.io/master-year1-advanced-r-and-github">firstlibflorian</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_gers_loire_atlantique"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/generer_rapport.html">generer_rapport</a></span><span class="op">(</span><span class="st">"44109"</span>, <span class="st">"44"</span>, <span class="st">"path/to/output.html"</span>, <span class="va">df_gers_loire_atlantique</span><span class="op">)</span></span></code></pre></div>
+<p>Additional examples can be found in the <code>vignettes/</code> directory.</p>
+<hr>
+</div>
 </div>
 <div class="section level2">
 <h2 id="id_-project-structure">📂 Project Structure<a class="anchor" aria-label="anchor" href="#id_-project-structure"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>firstlibflorian<span class="sc">/</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>│</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>├── R<span class="sc">/</span>                    <span class="co"># Source code (constructors, S3 methods, utilities)</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>├── inst<span class="sc">/</span>                 <span class="co"># Quarto templates for report generation</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>├── man<span class="sc">/</span>                  <span class="co"># Documentation generated via roxygen2</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>├── vignettes<span class="sc">/</span>            <span class="co"># Quarto/Rmd vignettes</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>├── tests<span class="sc">/</span>                <span class="co"># Unit tests using testthat</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>├── data<span class="sc">/</span>                 <span class="co"># Packaged datasets</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>└── DESCRIPTION           <span class="co"># Package metadata</span></span></code></pre></div>
+<pre class="text"><code>firstlibflorian/
+│
+├── data/                               # Packaged datasets
+│   └── df_gers_loire_atlantique.rda
+├── inst/                               # Quarto templates for report generation
+├── man/                                # Documentation generated via roxygen2
+├── R/                                  # Source code (constructors, S3 methods, utilities)
+├── tests/                              # Unit tests using testthat
+├── vignettes/                          # Quarto/Rmd vignettes
+└── DESCRIPTION                         # Package metadata</code></pre>
 <hr>
 </div>
 <div class="section level2">
-<h2 id="id_-main-functions">🔍 Main Functions<a class="anchor" aria-label="anchor" href="#id_-main-functions"></a>
+<h2 id="id_-references">📚 References<a class="anchor" aria-label="anchor" href="#id_-references"></a>
 </h2>
-<p>Constructors</p>
-<ul>
-<li><p>creer_commune() Creates an S3 object of class commune.</p></li>
-<li><p>creer_departement() Creates an S3 object of class departement.</p></li>
-</ul>
-<p>Summary Methods</p>
-<ul>
-<li><p>summary.commune() Displays commune-level demographic summaries (number of elected officials, age distribution, oldest/youngest elected person, etc.).</p></li>
-<li><p>summary.departement() Summarizes departmental information (number of communes, age distribution, etc.).</p></li>
-</ul>
-<p>Visualization Methods</p>
-<ul>
-<li>plot.commune()</li>
-<li>plot.departement() Produce visual representations of commune or department data.</li>
-</ul>
-<p>Reporting</p>
-<ul>
-<li>generer_rapport() Generates a Quarto report (rapport.html) for a chosen commune and department, then moves it to the user-specified destination.</li>
-</ul>
-<hr>
-</div>
-<div class="section level2">
-<h2 id="id_-results">📊 Results<a class="anchor" aria-label="anchor" href="#id_-results"></a>
-</h2>
-<p>Example output from generer_rapport() includes:</p>
-<ul>
-<li>Age distribution tables</li>
-<li>Lists of youngest/oldest elected officials</li>
-<li>Commune- and department-level statistics</li>
-<li>Visualizations generated by the plot.* S3 methods</li>
-</ul>
-<p>To be completed (insert illustration when available).</p>
-<hr>
-</div>
-<div class="section level2">
-<h2 id="id_-references">🧠 References<a class="anchor" aria-label="anchor" href="#id_-references"></a>
-</h2>
-<p>The package and its development rely on concepts introduced in:</p>
 <ul>
 <li>Course materials: R avancé et introduction à Git</li>
-<li>Tidyverse libraries (dplyr, tibble, stringr, ggplot2)</li>
-<li>Quarto documentation for report creation</li>
-<li>usethis, devtools, testthat workflows for package development</li>
+<li>Tidyverse documentation</li>
+<li>Quarto documentation</li>
 </ul>
 <hr>
 </div>
 <div class="section level2">
 <h2 id="id_-license">📜 License<a class="anchor" aria-label="anchor" href="#id_-license"></a>
 </h2>
-<p>GPL-3 © Florian Crochet</p>
+<p>This project is released under the GPL-3 License.<br>
+© 2024 Florian Crochet</p>
 <hr>
 </div>
 <div class="section level2">
@@ -183,9 +175,10 @@
 <hr>
 </div>
 <div class="section level2">
-<h2 id="id_-acknowledgments">💬 Acknowledgments<a class="anchor" aria-label="anchor" href="#id_-acknowledgments"></a>
+<h2 id="id_-acknowledgments">🤝 Acknowledgments<a class="anchor" aria-label="anchor" href="#id_-acknowledgments"></a>
 </h2>
-<p>This work was completed as part of the Advanced R and Introduction to Git project. Thanks to Raphaël Nedellec for course material and guidance.</p>
+<p>This work was conducted as part of the Advanced R and Introduction to Git module, supervised by Raphaël Nedellec.<br>
+Special thanks to the open-source community and academic resources that inspired this work.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
