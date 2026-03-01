@@ -1,145 +1,101 @@
-# Welcome to the firstlibflorian package
+# French Demographic Analysis - R Package
+*This R package provides tools for structural demographic and geographic analysis.*
 
-A package for geographic and demographic analysis of French communes and
-departments.
+[**Package Documentation (Online)**](https://floriancrochet.github.io/master-year1-advanced-r-and-github)
 
 ---
 
-## 📘 Overview
+## 🎯 Overview
+This project provides tools for demographic and geographic data analysis of French communes and departments.  
+This work was developed within the context of the Advanced R and Introduction to Git coursework.
 
-firstlibflorian is an R package designed to analyze, summarize, and
-visualize demographic and geographic data for French communes and
-departments.
-The package originates from coursework in Advanced R and Introduction to
-Git and includes S3 classes, reporting tools, documentation, vignettes,
-and pkgdown integration.
+**Objectives**
+- Construct custom classes for communes and departments
+- Automate demographic and statistical reporting via Quarto
+- Generate clear visualizations using ggplot2
+- Ensure reproducible and professionally documented workflows
 
-Core objectives:
+---
 
--   Provide constructors and summaries for custom classes commune and
-    departement
--   Enable statistical and demographic reporting through Quarto
--   Offer clear visualizations using ggplot2
--   Ensure reproducibility and professional documentation
+## 🗄️ Data
+- **Data Availability:** Packaged dataset provided in `data/`
 
 ---
 
 ## ⚙️ Features
-
--   Creation of structured objects using creer_commune() and
-    creer_departement()
--   Statistical summaries with summary.commune() and
-    summary.departement()
--   Visualizations via plot.commune() and plot.departement()
--   Automated generation of Quarto reports through generer_rapport()
--   Integration with pkgdown to publish documentation
--   Support for vignettes built with Quarto
+- **Create Custom Classes:** Represent communes and departments via S3 structured objects
+- **Summarize Statistical Metrics:** Compute demographic metrics at regional levels
+- **Visualize Population Data:** Display commune and department data graphically
+- **Automate Quarto Reporting:** Generate interactive analytical reports seamlessly
+- **Publish Package Documentation:** Deploy comprehensive reference materials using pkgdown
+- **Integrate Rmd Vignettes:** Support instructional demonstrations directly within Quarto
 
 ---
 
-## 🛠️ Installation
-
-Install the package from GitHub:
-
-    install.packages("devtools")
-    devtools::install_github("floriancrochet/masters-year1-advanced-r-and-github")
+## 🧰 Tech Stack
+- **Language:** R (>= 4.1.0)
+- **Data Manipulation:** dplyr, tibble, stringr, lubridate, purrr
+- **Visualization:** ggplot2, cowplot
+- **Deployment & MLOps:** Quarto, pkgdown, devtools, roxygen2, usethis, testthat, knitr, rmarkdown
 
 ---
 
-## 📚 Usage Example
+## 📦 Installation
+```R
+install.packages("devtools")
+devtools::install_github("floriancrochet/master-year1-advanced-r-and-github")
+```
 
-    library(firstlibflorian)
+---
 
-    # Example: Generate a report for Nantes (commune 44109) and Loire-Atlantique (department 44)
-    generer_rapport(44109, 44, "path/to/output.html")
+## 💻 Usage Example
 
-Additional examples appear in the package vignettes, including:
+### Reproducing the Analysis / Execution Pipeline
+*(Expected runtime: ~20 seconds on AMD Ryzen 7)*
 
--   Générer un rapport d’analyses
--   Fonctions du package firstlibflorian
+```R
+library(firstlibflorian)
+
+data("df_gers_loire_atlantique")
+generer_rapport("44109", "44", "path/to/output.html", df_gers_loire_atlantique)
+```
+
+Additional examples can be found in the `vignettes/` directory.
 
 ---
 
 ## 📂 Project Structure
 
-    firstlibflorian/
-    │
-    ├── R/                    # Source code (constructors, S3 methods, utilities)
-    ├── inst/                 # Quarto templates for report generation
-    ├── man/                  # Documentation generated via roxygen2
-    ├── vignettes/            # Quarto/Rmd vignettes
-    ├── tests/                # Unit tests using testthat
-    ├── data/                 # Packaged datasets
-    └── DESCRIPTION           # Package metadata
+```text
+firstlibflorian/
+│
+├── data/                               # Packaged datasets
+│   └── df_gers_loire_atlantique.rda
+├── inst/                               # Quarto templates for report generation
+├── man/                                # Documentation generated via roxygen2
+├── R/                                  # Source code (constructors, S3 methods, utilities)
+├── tests/                              # Unit tests using testthat
+├── vignettes/                          # Quarto/Rmd vignettes
+└── DESCRIPTION                         # Package metadata
+```
 
 ---
 
-## 🔍 Main Functions
-
-Constructors
-
--   creer_commune()
-    Creates an S3 object of class commune.
-
--   creer_departement()
-    Creates an S3 object of class departement.
-
-Summary Methods
-
--   summary.commune()
-    Displays commune-level demographic summaries (number of elected
-    officials, age distribution, oldest/youngest elected person, etc.).
-
--   summary.departement()
-    Summarizes departmental information (number of communes, age
-    distribution, etc.).
-
-Visualization Methods
-
--   plot.commune()
--   plot.departement()
-    Produce visual representations of commune or department data.
-
-Reporting
-
--   generer_rapport()
-    Generates a Quarto report (rapport.html) for a chosen commune and
-    department, then moves it to the user-specified destination.
-
----
-
-## 📊 Results
-
-Example output from generer_rapport() includes:
-
--   Age distribution tables
--   Lists of youngest/oldest elected officials
--   Commune- and department-level statistics
--   Visualizations generated by the plot.* S3 methods
-
-  To be completed (insert illustration when available).
-
----
-
-## 🧠 References
-
-The package and its development rely on concepts introduced in:
-
--   Course materials: R avancé et introduction à Git
--   Tidyverse libraries (dplyr, tibble, stringr, ggplot2)
--   Quarto documentation for report creation
--   usethis, devtools, testthat workflows for package development
+## 📚 References
+- Course materials: R avancé et introduction à Git
+- Tidyverse documentation
+- Quarto documentation
 
 ---
 
 ## 📜 License
-
-GPL-3
-© Florian Crochet
+This project is released under the GPL-3 License.  
+© 2024 Florian Crochet
 
 ---
 
 ## 👤 Author
+
 **Florian Crochet**  
 [GitHub Profile](https://github.com/floriancrochet)
 
@@ -147,8 +103,6 @@ GPL-3
 
 ---
 
-## 💬 Acknowledgments
-
-This work was completed as part of the Advanced R and Introduction to
-Git project. Thanks to Raphaël Nedellec for course material and
-guidance.
+## 🤝 Acknowledgments
+This work was conducted as part of the Advanced R and Introduction to Git module, supervised by Raphaël Nedellec.  
+Special thanks to the open-source community and academic resources that inspired this work.
