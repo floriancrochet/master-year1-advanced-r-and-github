@@ -45,9 +45,10 @@ workflows
 ## 🧰 Tech Stack
 
 - **Language:** R (\>= 4.1.0)
-- **Data Manipulation & I/O:** dplyr, tibble, stringr, lubridate, purrr
+- **Numerical Computing & Data Manipulation:** dplyr, tibble, stringr,
+  lubridate, purrr
 - **Data Visualization:** ggplot2, cowplot
-- **Software Engineering & Testing:** devtools, usethis, testthat
+- **Code Quality & Testing:** devtools, usethis, testthat
 - **Reporting & Documentation:** Quarto, pkgdown, roxygen2, knitr,
   rmarkdown
 
