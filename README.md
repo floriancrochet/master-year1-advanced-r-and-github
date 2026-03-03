@@ -1,19 +1,18 @@
 # French Demographic Analysis - R Package
 *This R package provides tools for structural demographic and geographic analysis.*
 
-[**Package Documentation (Online)**](https://floriancrochet.github.io/master-year1-advanced-r-and-github)
+[Package Documentation (Online)](https://floriancrochet.github.io/master-year1-advanced-r-and-github)
 
 ---
 
 ## 🎯 Overview
 This project provides tools for demographic and geographic data analysis of French communes and departments.  
-This work was developed within the context of the Advanced R and Introduction to Git coursework.
 
 **Objectives**
 - Construct custom classes for communes and departments
 - Automate demographic and statistical reporting via Quarto
-- Generate clear visualizations using ggplot2
-- Ensure reproducible and professionally documented workflows
+- Generate visualizations using ggplot2
+- Ensure reproducible and documented workflows
 
 ---
 
@@ -26,17 +25,18 @@ This work was developed within the context of the Advanced R and Introduction to
 - **Create Custom Classes:** Represent communes and departments via S3 structured objects
 - **Summarize Statistical Metrics:** Compute demographic metrics at regional levels
 - **Visualize Population Data:** Display commune and department data graphically
-- **Automate Quarto Reporting:** Generate interactive analytical reports seamlessly
-- **Publish Package Documentation:** Deploy comprehensive reference materials using pkgdown
+- **Automate Quarto Reporting:** Generate interactive analytical reports
+- **Publish Package Documentation:** Deploy reference materials using pkgdown
 - **Integrate Rmd Vignettes:** Support instructional demonstrations directly within Quarto
 
 ---
 
 ## 🧰 Tech Stack
 - **Language:** R (>= 4.1.0)
-- **Data Manipulation:** dplyr, tibble, stringr, lubridate, purrr
-- **Visualization:** ggplot2, cowplot
-- **Deployment & MLOps:** Quarto, pkgdown, devtools, roxygen2, usethis, testthat, knitr, rmarkdown
+- **Data Manipulation & I/O:** dplyr, tibble, stringr, lubridate, purrr
+- **Data Visualization:** ggplot2, cowplot
+- **Software Engineering & Testing:** devtools, usethis, testthat
+- **Reporting & Documentation:** Quarto, pkgdown, roxygen2, knitr, rmarkdown
 
 ---
 
@@ -60,8 +60,6 @@ data("df_gers_loire_atlantique")
 generer_rapport("44109", "44", "path/to/output.html", df_gers_loire_atlantique)
 ```
 
-Additional examples can be found in the `vignettes/` directory.
-
 ---
 
 ## 📂 Project Structure
@@ -82,9 +80,8 @@ firstlibflorian/
 ---
 
 ## 📚 References
-- Course materials: R avancé et introduction à Git
-- Tidyverse documentation
 - Quarto documentation
+- Tidyverse documentation
 
 ---
 
@@ -104,5 +101,4 @@ This project is released under the GPL-3 License.
 ---
 
 ## 🤝 Acknowledgments
-This work was conducted as part of the Advanced R and Introduction to Git module, supervised by Raphaël Nedellec.  
-Special thanks to the open-source community and academic resources that inspired this work.
+This work was conducted as part of the Advanced R and Introduction to Git course, supervised by Raphaël Nedellec.  
