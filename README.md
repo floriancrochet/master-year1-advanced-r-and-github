@@ -68,6 +68,9 @@ generer_rapport("44109", "44", "path/to/output.html", df_gers_loire_atlantique)
 firstlibflorian/
 │
 ├── .github/
+│   ├── workflows/
+│   │   └── pkgdown.yaml
+│   └── .gitignore
 ├── R/
 │   ├── calcul_distribution_age.R             # Demographic distribution computation
 │   ├── compter_nombre_d_adjoints.R           # Demographic aggregation counting
@@ -89,13 +92,47 @@ firstlibflorian/
 ├── data/
 │   └── df_gers_loire_atlantique.rda
 ├── inst/
+│   ├── .gitignore
 │   └── rapport.qmd                           # Analytical report template
 ├── man/
+│   ├── calcul_distribution_age.Rd
+│   ├── compter_nombre_d_adjoints.Rd
+│   ├── compter_nombre_d_elus.Rd
+│   ├── creer_commune.Rd
+│   ├── creer_departement.Rd
+│   ├── df_gers_loire_atlantique.Rd
+│   ├── generer_rapport.Rd
+│   ├── plot.commune.Rd
+│   ├── plot.departement.Rd
+│   ├── plot_code_professions.Rd
+│   ├── summary.commune.Rd
+│   ├── summary.departement.Rd
+│   ├── trouver_elu_le_plus_age_jeune.Rd
+│   ├── trouver_l_elu_le_plus_age.Rd
+│   ├── trouver_moyenne_age_faible_elevee.Rd
+│   └── valider_schema.Rd
 ├── pkgdown/
+│   └── style.css
 ├── tests/
-│   └── testthat/
-│       └── testthat.R                        # testthat architecture
+│   ├── testthat/
+│   │   ├── test-calcul_distribution_age.R
+│   │   ├── test-compter_nombre_d_adjoints.R
+│   │   ├── test-compter_nombre_d_elus.R
+│   │   ├── test-creer_commune.R
+│   │   ├── test-creer_departement.R
+│   │   ├── test-generer_rapport.R
+│   │   ├── test-plot.commune.R
+│   │   ├── test-plot.departement.R
+│   │   ├── test-plot_code_professions.R
+│   │   ├── test-summary.commune.R
+│   │   ├── test-summary.departement.R
+│   │   ├── test-trouver_elu_le_plus_age_jeune.R
+│   │   ├── test-trouver_l_elu_le_plus_age.R
+│   │   ├── test-trouver_moyenne_age_faible_elevee.R
+│   │   └── test-valider_schema.R
+│   └── testthat.R
 ├── vignettes/
+│   ├── .gitignore
 │   ├── description.qmd                       # Structural overview
 │   ├── firstlibFlorian.qmd                   # Core tutorial
 │   └── fonctions.qmd                         # API documentation
