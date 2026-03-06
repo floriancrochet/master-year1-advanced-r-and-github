@@ -67,14 +67,45 @@ generer_rapport("44109", "44", "path/to/output.html", df_gers_loire_atlantique)
 ```text
 firstlibflorian/
 │
-├── data/                               # Packaged datasets
+├── .github/
+├── R/
+│   ├── calcul_distribution_age.R             # Demographic distribution computation
+│   ├── compter_nombre_d_adjoints.R           # Demographic aggregation counting
+│   ├── compter_nombre_d_elus.R               # Demographic aggregation counting
+│   ├── creer_commune.R                       # S3 object constructor
+│   ├── creer_departement.R                   # S3 object constructor
+│   ├── data.R                                # Base schema definition
+│   ├── generer_rapport.R                     # Quarto report orchestrator
+│   ├── plot.commune.R                        # Custom S3 visualization method
+│   ├── plot.departement.R                    # Custom S3 visualization method
+│   ├── plot_code_professions.R               # Custom S3 visualization method
+│   ├── summary.commune.R                     # Statistical summary method
+│   ├── summary.departement.R                 # Statistical summary method
+│   ├── trouver_elu_le_plus_age_jeune.R       # Demographic extrema identification
+│   ├── trouver_l_elu_le_plus_age.R           # Demographic extrema identification
+│   ├── trouver_moyenne_age_faible_elevee.R   # Demographic mean optimization
+│   ├── valider_schema.R                      # S3 class validator
+│   └── zzz.R                                 # Startup sequence
+├── data/
 │   └── df_gers_loire_atlantique.rda
-├── inst/                               # Quarto templates for report generation
-├── man/                                # Documentation generated via roxygen2
-├── R/                                  # Source code (constructors, S3 methods, utilities)
-├── tests/                              # Unit tests using testthat
-├── vignettes/                          # Quarto/Rmd vignettes
-└── DESCRIPTION                         # Package metadata
+├── inst/
+│   └── rapport.qmd                           # Analytical report template
+├── man/
+├── pkgdown/
+├── tests/
+│   └── testthat/
+│       └── testthat.R                        # testthat architecture
+├── vignettes/
+│   ├── description.qmd                       # Structural overview
+│   ├── firstlibFlorian.qmd                   # Core tutorial
+│   └── fonctions.qmd                         # API documentation
+├── .Rbuildignore
+├── .gitignore
+├── DESCRIPTION
+├── NAMESPACE
+├── README.md
+├── _pkgdown.yml
+└── firstlibFlorian.Rproj
 ```
 
 ---
