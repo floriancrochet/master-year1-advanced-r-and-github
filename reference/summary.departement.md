@@ -88,7 +88,7 @@ summary(df_Loire_Atlantique)
 #> # A tibble: 1 × 7
 #>   Nom                Min    Q1 Médiane Moyenne    Q3   Max
 #>   <chr>            <dbl> <dbl>   <dbl>   <dbl> <dbl> <dbl>
-#> 1 Loire-Atlantique    23    47      55      55    64    85
+#> 1 Loire-Atlantique    24    47      55      55    64    85
 #> 
 #> Nom et âge de l’élu.e le ou la plus âgé.e et de l’élu.e le ou la plus jeune, ainsi que leur commune :
 #> # A tibble: 2 × 5
